@@ -20,7 +20,7 @@
         /* Portfolio Hero */
         #portfolio-hero {
             padding: 14rem 0 10rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1920') center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('images/portfolio-hero-bg.png') center/cover;
             background-size: cover;
             background-position: center;
             text-align: center;
@@ -401,7 +401,7 @@
             color: var(--accent);
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1080px) {
             .system-timeline::after {
                 left: 20px;
             }
@@ -411,10 +411,12 @@
                 flex-direction: column;
                 align-items: flex-start;
                 padding-left: 50px;
+                margin-bottom: 5rem;
             }
 
             .node-content {
                 width: 100%;
+                padding: 1.5rem;
             }
 
             .node-point {
@@ -423,6 +425,15 @@
 
             .node-connector {
                 display: none;
+            }
+
+            .node-details {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .node-content h3 {
+                font-size: 1.5rem;
             }
         }
 
@@ -445,13 +456,8 @@
                 </a>
 
                 <ul class="nav-links">
-                    <li class="has-dropdown">
-                        <a href="#">Home</a>
-                        <ul class="dropdown">
-                            <li><a href="index.html">Home 1</a></li>
-                            <li><a href="home-2.html">Home 2</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="home-2.html">Home 2</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="portfolio.html" class="active">Portfolio</a></li>
                     <li><a href="services.html">Services</a></li>
@@ -492,12 +498,7 @@
                             <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1000"
                                 alt="Stellar Horizon">
                             <div class="item-overlay-simple">
-                                <button class="audio-preview-btn">
-                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                    INITIALIZE SAMPLE
-                                </button>
+
                             </div>
                         </div>
                         <div class="item-details-v2">
@@ -515,12 +516,7 @@
                             <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1000"
                                 alt="Neon Knight">
                             <div class="item-overlay-simple">
-                                <button class="audio-preview-btn">
-                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                    INITIALIZE SAMPLE
-                                </button>
+
                             </div>
                         </div>
                         <div class="item-details-v2">
@@ -538,12 +534,7 @@
                             <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000"
                                 alt="Flow OS">
                             <div class="item-overlay-simple">
-                                <button class="audio-preview-btn">
-                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                    INITIALIZE SAMPLE
-                                </button>
+
                             </div>
                         </div>
                         <div class="item-details-v2">
