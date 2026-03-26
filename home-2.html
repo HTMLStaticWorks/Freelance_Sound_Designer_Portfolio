@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonic Architect | Sonic Lab - Technical Excellence</title>
     <meta name="description"
         content="Explore Sonic Lab, the technical core of Sonic Architect. Advanced sound design, cinematic mixing, and technical expertise for your audio projects.">
@@ -527,6 +528,22 @@
 
             #cta-2-v2 h2 {
                 font-size: 3rem !important;
+            }
+
+            .nav-links {
+                top: 0 !important;
+                right: 0 !important;
+                transform: translateX(100%);
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+
+            .nav-links.active {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
             }
         }
     </style>
