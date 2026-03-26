@@ -464,6 +464,27 @@
 
         @media (max-width: 1080px) {
 
+            .hero-inset-box {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-2-image {
+                order: 1;
+                min-height: 320px;
+            }
+
+            .hero-2-content {
+                order: 2;
+                width: 100%;
+                padding: 4rem 3rem;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-2-content p {
+                max-width: 100% !important;
+            }
+
             .hero-2-grid,
             .masterpiece-row,
             .masterpiece-row.reverse,
@@ -489,10 +510,15 @@
 
             .hero-btns {
                 justify-content: center !important;
+                flex-wrap: wrap;
+                width: 100%;
+                gap: 1rem;
             }
 
             .hero-2-content h1 {
                 font-size: 4rem;
+                line-height: 1;
+                letter-spacing: -2px;
             }
 
             .lab-module {
@@ -530,6 +556,14 @@
                 font-size: 3rem !important;
             }
 
+            #cta-2-v2 .btn {
+                width: 100%;
+                max-width: 360px;
+                padding: 1.2rem 2rem !important;
+                white-space: normal;
+                text-align: center;
+            }
+
             .nav-links {
                 top: 0 !important;
                 right: 0 !important;
@@ -544,6 +578,43 @@
                 opacity: 1;
                 visibility: visible;
                 pointer-events: auto;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-2-content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-2-content h1 {
+                font-size: 2.8rem;
+                line-height: 1.05;
+                letter-spacing: -1px;
+                word-break: break-word;
+            }
+
+            .hero-2-content .subtitle {
+                letter-spacing: 3px !important;
+            }
+
+            #cta-2-v2 {
+                padding: 5rem 1.25rem;
+            }
+
+            #cta-2-v2 h2 {
+                font-size: 2.2rem !important;
+                line-height: 1.1;
+                letter-spacing: -1px !important;
+            }
+
+            #cta-2-v2 p {
+                font-size: 1rem !important;
+                margin: 2rem auto !important;
+            }
+
+            #cta-2-v2 .btn {
+                max-width: 100%;
+                font-size: 0.95rem !important;
             }
         }
     </style>
