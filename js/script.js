@@ -1,197 +1,122 @@
-/* Sonic Architect - JavaScript Functionality */
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Header Scroll Effect
-    const header = document.getElementById('main-header');
+
+  // --- Theme Toggle (Dark/Light) ---
+  const themeToggles = document.querySelectorAll('.theme-toggle');
+  
+  // Check local storage or default to dark
+  const currentTheme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  
+  themeToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      let theme = document.documentElement.getAttribute('data-theme');
+      let newTheme = theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  });
+
+  // --- RTL Toggle ---
+  const rtlToggles = document.querySelectorAll('.rtl-toggle');
+  const currentDir = localStorage.getItem('dir') || 'ltr';
+  document.documentElement.setAttribute('dir', currentDir);
+  
+  rtlToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      let dir = document.documentElement.getAttribute('dir');
+      let newDir = dir === 'ltr' ? 'rtl' : 'ltr';
+      document.documentElement.setAttribute('dir', newDir);
+      localStorage.setItem('dir', newDir);
+    });
+  });
+
+  // --- Mobile Menu Toggle ---
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
+  // --- Password Visibility Toggle ---
+  const pwdToggles = document.querySelectorAll('.pwd-toggle');
+  pwdToggles.forEach(toggle => {
+    toggle.addEventListener('click', function() {
+      const input = this.previousElementSibling;
+      if (input.type === 'password') {
+        input.type = 'text';
+        // change icon to eye-off
+        this.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-sm"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`;
+      } else {
+        input.type = 'password';
+        // change icon back to eye
+        this.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-sm"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+      }
+    });
+  });
+
+  // --- Audio Player Interaction Mock ---
+  const playBtns = document.querySelectorAll('.play-btn');
+  playBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const isPlaying = this.classList.contains('playing');
+      const waveform = this.closest('.audio-track').querySelector('.waveform-mock');
+      
+      if (isPlaying) {
+        this.classList.remove('playing');
+        this.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`;
+        waveform.style.opacity = '0.5';
+        waveform.style.animation = 'none';
+      } else {
+        // Pause all others first
+        playBtns.forEach(b => {
+          b.classList.remove('playing');
+          b.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`;
+        });
+        document.querySelectorAll('.waveform-mock').forEach(w => {
+           w.style.opacity = '0.5';
+           w.style.animation = 'none';
+        });
+
+        this.classList.add('playing');
+        this.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>`;
+        waveform.style.opacity = '1';
+        // Add a simple animation for playback simulation
+        waveform.style.animation = 'pulse 1s infinite alternate';
+      }
+    });
+  });
+
+  // --- Scroll to Top Button ---
+  const scrollTopBtn = document.querySelector('.scroll-top');
+  
+  if (scrollTopBtn) {
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
     });
 
-    // 2. Waveform Animation (Only on Home 1)
-    const canvas = document.getElementById('waveform');
-    if (canvas) {
-        const ctx = canvas.getContext('2d');
-        let width, height;
-
-        function resize() {
-            width = canvas.width = canvas.offsetWidth;
-            height = canvas.height = canvas.offsetHeight;
-        }
-
-        window.addEventListener('resize', resize);
-        resize();
-
-        const bars = 80;
-        const barWidth = width / bars;
-        let offset = 0;
-
-        function draw() {
-            ctx.clearRect(0, 0, width, height);
-            ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#00E5FF';
-
-            for (let i = 0; i < bars; i++) {
-                const x = i * barWidth;
-                const h = Math.sin(i * 0.2 + offset) * 100 + 150;
-                const h2 = Math.cos(i * 0.1 + offset * 0.5) * 50 + 150;
-                
-                const finalH = (h + h2) / 2;
-                ctx.globalAlpha = 0.5;
-                ctx.fillRect(x + 2, height / 2 - finalH / 2, barWidth - 4, finalH);
-            }
-
-            offset += 0.05;
-            requestAnimationFrame(draw);
-        }
-        draw();
-    }
-
-    // 3. Theme Toggle Logic
-    const themeToggle = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    if (currentTheme === 'light') themeToggle.textContent = '🌙';
-
-    themeToggle.addEventListener('click', () => {
-        let theme = document.documentElement.getAttribute('data-theme');
-        let newTheme = theme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        themeToggle.textContent = newTheme === 'light' ? '🌙' : '☀️';
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
+  }
 
-    // 4. Active Link Detection
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    
-    navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
-        
-        // Highlight logic
-        if (linkPath === currentPath) {
-            link.classList.add('active');
-            
-            // If it's a dropdown item, highlight its parent too
-            const parentDropdown = link.closest('.has-dropdown');
-            if (parentDropdown) {
-                const parentLink = parentDropdown.querySelector('a');
-                if (parentLink) parentLink.classList.add('active');
-            }
-        } else if (linkPath === '#' && (currentPath === 'index.html' || currentPath === 'home-2.html' || currentPath === '')) {
-            // Specifically highlight "Home" for index or home-2
-            link.classList.add('active');
-        } else if (linkPath !== '#') {
-            link.classList.remove('active');
-        }
-    });
-
-    // 5. Scroll Animations (Intersection Observer)
-    const observerOptions = { threshold: 0.1 };
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('reveal');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('section, .portfolio-card, .service-item, .about-grid, .gear-card').forEach(el => {
-        el.classList.add('hide-for-reveal');
-        observer.observe(el);
-    });
-
-    // 6. RTL Toggle Logic
-    const rtlToggle = document.getElementById('rtl-toggle');
-    if (rtlToggle) {
-        rtlToggle.addEventListener('click', () => {
-            const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
-            document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr'); // Default is ltr
-            if (isRTL) {
-                document.documentElement.removeAttribute('dir');
-                rtlToggle.textContent = 'RTL';
-            } else {
-                document.documentElement.setAttribute('dir', 'rtl');
-                rtlToggle.textContent = 'LTR';
-            }
-        });
-    }
-
-    // 7. Hamburger Menu Toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinksList = document.querySelector('.nav-links');
-    
-    if (mobileMenuBtn && navLinksList) {
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinksList.classList.toggle('active');
-            mobileMenuBtn.textContent = navLinksList.classList.contains('active') ? '✕' : '☰';
-        });
-
-        // Toggle dropdowns on click in mobile view
-        const hasDropdownLinks = document.querySelectorAll('.has-dropdown > a');
-        hasDropdownLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 992) {
-                    e.preventDefault();
-                    link.parentElement.classList.toggle('active');
-                }
-            });
-        });
-    }
-
-    // 8. Form Validation
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            const isSearch = form.classList.contains('search-form');
-            if (isSearch) return; // Skip validation for search form if simple
-
-            e.preventDefault();
-            let isValid = true;
-            const inputs = form.querySelectorAll('input[required], textarea[required]');
-            
-            inputs.forEach(input => {
-                const parent = input.parentElement;
-                let error = parent.querySelector('.error-msg');
-                
-                if (!input.value.trim()) {
-                    isValid = false;
-                    input.style.borderColor = 'var(--accent)';
-                    if (!error) {
-                        error = document.createElement('span');
-                        error.className = 'error-msg';
-                        error.style.color = 'var(--accent)';
-                        error.style.fontSize = '0.7rem';
-                        error.style.marginTop = '0.3rem';
-                        error.style.display = 'block';
-                        error.textContent = 'This field is required';
-                        parent.appendChild(error);
-                    }
-                } else {
-                    input.style.borderColor = 'var(--glass-border)';
-                    if (error) error.remove();
-                }
-            });
-
-            if (isValid) {
-                const btn = form.querySelector('button[type="submit"]');
-                const originalText = btn.textContent;
-                btn.textContent = 'SUCCESS!';
-                btn.style.background = '#00ff00';
-                btn.style.color = '#000';
-                
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = '';
-                    btn.style.color = '';
-                    form.reset();
-                }, 3000);
-            }
-        });
-    });
 });
+
+// Add extra keyframes via JS or global CSS (pulse for audio)
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes pulse {
+  0% { transform: scaleY(1); opacity: 0.8; }
+  100% { transform: scaleY(1.2); opacity: 1; }
+}
+`;
+document.head.appendChild(style);

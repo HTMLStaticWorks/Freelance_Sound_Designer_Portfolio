@@ -1,392 +1,401 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonic Architect | Freelance Sound Engineer</title>
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/rtl.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
-    <style>
-        @media (max-width: 1080px) {
-            .mobile-menu-btn {
-                display: flex !important;
-            }
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA SOUND | Specialized Technical Sound Design</title>
+  <meta name="description"
+    content="Technical excellence in cinematic soundscapes and Atmos engineering. Aura Sound Studio delivers surgical audio precision.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        @media (min-width: 1081px) {
-            .mobile-menu-btn {
-                display: none !important;
-            }
-        }
-    </style>
+    .fade-in-up {
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--primary) !important;
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.15);
+      transform: translateY(-5px);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+
+    .hero-glass-container {
+      position: relative;
+    }
+  </style>
 </head>
 
 <body>
 
-    <header id="main-header">
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="images/logo.svg" alt="Sonic Architect Logo">
-                    SONIC
-                </a>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home 1</a></li>
-                    <li><a href="home-2.html">Home 2</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="register.html" class="btn btn-primary btn-signup">Sign Up</a></li>
-                    <li class="nav-actions">
-                        <button id="rtl-toggle" class="btn-theme" title="Toggle RTL"
-                            style="font-size: 0.7rem; font-weight: 700;">RTL</button>
-                        <button id="theme-toggle" class="btn-theme" title="Toggle Theme">☀️</button>
-                    </li>
-                </ul>
-                <div class="header-actions">
-                    <div class="mobile-menu-btn">☰</div>
-                </div>
-            </nav>
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="container nav-inner flex-between">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+          stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+          <path d="M2 12h4l3-9 5 18 3-9h5"></path>
+        </svg>
+        AURA<span>SOUND</span>
+      </a>
+
+      <!-- Menu Toggle -->
+      <button class="menu-toggle icon-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active">Home1</a>
+        <a href="home2.html" class="nav-link">Home2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="work.html" class="nav-link">Work</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button class="icon-btn rtl-toggle" title="Toggle RTL">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-sm">
+              <path d="M20 8H4M8 4l-4 4 4 4"></path>
+              <path d="M4 16h16M16 12l4 4-4 4"></path>
+            </svg>
+          </button>
+
+          <button class="icon-btn theme-toggle" title="Toggle Dark/Light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-sm">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+
+          <a href="contact.html" class="btn btn-primary">Reach Us</a>
         </div>
-    </header>
+      </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero">
-            <div id="hero-bg-slider">
-                <div class="slide"></div>
-                <div class="slide"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section (Restored Classic) -->
+    <section id="h-hero-v2" class="section"
+      style="padding-top: var(--nav-height); min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; background: linear-gradient(rgba(11, 15, 25, 0.4), rgba(11, 15, 25, 0.6)), url('images/home1_hero_premium.png') center/cover; background-attachment: fixed;">
+      <div class="h-hero-scanline"></div>
+      <div class="container" style="position: relative; z-index: 10;">
+        <div class="hero-glass-container fade-in-up"
+          style="background: rgba(11, 15, 25, 0.3); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); padding: 5rem 3rem; border-radius: var(--radius-lg); border: 1px solid rgba(255, 255, 255, 0.12); max-width: 950px; margin: 0 auto; box-shadow: 0 50px 100px rgba(0,0,0,0.6); border-bottom: 2px solid rgba(6, 182, 212, 0.3); text-align: center;">
+          <div class="hero-header-v2">
+            <span class="hero-eyebrow"
+              style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4em; margin-bottom: 2rem; display: block; font-size: 0.9rem;">Immersive Sound Engineering</span>
+            <h1
+              style="font-size: clamp(3.2rem, 8vw, 6rem); text-transform: uppercase; font-weight: 950; line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 2.5rem; color: #fff; text-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+              Bespoke <span
+                style="color: var(--primary); filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4));">Sonic</span>
+              Architecture
+            </h1>
+          </div>
+          <p
+            style="font-size: 1.35rem; max-width: 750px; margin: 0 auto 4rem; opacity: 0.9; line-height: 1.7; color: #f3f4f6; font-weight: 300;">
+            Where surgical precision meets artistic narrative. We engineer high-fidelity audio that breathes life into cinematic visuals.
+          </p>
+          <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+            <a href="work.html" class="btn btn-primary" style="padding: 1.25rem 3rem; font-weight: 800; font-size: 1.1rem; box-shadow: 0 0 30px rgba(6, 182, 212, 0.4); text-transform: uppercase; letter-spacing: 0.1em;">Explore Projects</a>
+            <a href="services.html" class="btn btn-secondary" style="border: 1.5px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.08); color: #fff; padding: 1.25rem 3rem; font-weight: 700; font-size: 1.1rem; text-transform: uppercase;">Our Solutions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview (Classic) -->
+    <section class="section">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: 5rem; text-transform: uppercase; letter-spacing: -0.02em;">
+          Technical Expertise</h2>
+        <div class="grid-3" style="gap: 3rem;">
+          <div class="glass-bg"
+            style="padding: 0; border-radius: var(--radius-lg); border: 1px solid var(--border-color); position: relative; overflow: hidden; text-align: center;">
+            <div
+              style="height: 200px; background: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200') center/cover;">
             </div>
-
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Sculpting Immersive Audio Experiences</h1>
-                    <p>Freelance Sound Engineer specializing in mixing, mastering, and creative sound design for film,
-                        games, and music.</p>
-                    <div class="hero-btns">
-                        <a href="portfolio.html" class="btn btn-primary">Listen to My Work</a>
-                        <a href="contact.html" class="btn btn-outline">Hire Me</a>
-                    </div>
-                </div>
+            <div style="padding: 3rem;">
+              <h3 style="margin-bottom: 1.5rem; text-transform: uppercase;">Sound Design</h3>
+              <p style="opacity: 0.7; font-size: 0.9375rem; line-height: 1.7;">Hyper-realistic synthesis and granular
+                manipulation for maximum narrative weight.</p>
             </div>
-        </section>
-
-        <!-- About Preview Section (Beyond the Decibels) -->
-        <section id="about-preview">
-            <div class="container">
-                <div class="about-split">
-                    <div class="about-visual">
-                        <div class="visual-deco">
-                            <span class="deco-number">01</span>
-                            <div class="deco-line"></div>
-                        </div>
-                        <div class="visual-placeholder glass">
-                            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1000&auto=format&fit=crop"
-                                alt="Sonic Architect Studio"
-                                style="opacity: 0.8; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                    </div>
-                    <div class="about-info">
-                        <span class="subtitle">Innovation meets precision</span>
-                        <h2 class="section-title">Beyond the Decibels</h2>
-                        <p>With over 10 years of experience in the sonic arts, I collaborate with directors, game
-                            developers, and artists to create auditory worlds that resonate.</p>
-
-                        <div class="about-stats-grid">
-                            <div class="stat-card glass">
-                                <span class="stat-num">150+</span>
-                                <span class="stat-label">Projects Completed</span>
-                            </div>
-                            <div class="stat-card glass">
-                                <span class="stat-num">5</span>
-                                <span class="stat-label">Industry Awards</span>
-                            </div>
-                            <div class="stat-card glass">
-                                <span class="stat-num">100%</span>
-                                <span class="stat-label">Client Satisfaction</span>
-                            </div>
-                        </div>
-
-                        <a href="about.html" class="btn btn-outline" style="margin-top: 2rem;">Read My Story</a>
-                    </div>
-                </div>
+          </div>
+          <div class="glass-bg"
+            style="padding: 0; border-radius: var(--radius-lg); border: 1px solid var(--border-color); position: relative; overflow: hidden; text-align: center;">
+            <div
+              style="height: 200px; background: url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200') center/cover;">
             </div>
-        </section>
-
-        <!-- Featured Work / Portfolio Section -->
-        <section id="featured-work" class="glass-bg-alt">
-            <div class="container">
-                <div class="section-header-minimal">
-                    <h2 class="section-title">Selected Soundscapes</h2>
-                    <p>High-fidelity audio architecture for film and interactive media.</p>
-                </div>
-
-                <div class="portfolio-grid-minimal">
-                    <!-- Project 1 -->
-                    <div class="portfolio-item-v2">
-                        <div class="item-image-wrap">
-                            <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/11/tom-cruise-edge-of-tomorrow-2.jpg"
-                                alt="Edge of Tomorrow">
-                            <div class="item-overlay-simple">
-                                <span class="play-icon-v2">▶</span>
-                            </div>
-                        </div>
-                        <div class="item-details-v2">
-                            <span class="item-cat">Film / Sound Design</span>
-                            <h3>Edge of Tomorrow: Redux</h3>
-                            <a href="#" class="item-link">Explore Soundscape</a>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="portfolio-item-v2">
-                        <div class="item-image-wrap">
-                            <img src="https://tse1.mm.bing.net/th/id/OIP.A9-bICBRpKDjmk8GfKFyGgHaEK?pid=Api&P=0&h=180"
-                                alt="Cyberpunk 2077">
-                            <div class="item-overlay-simple">
-                                <span class="play-icon-v2">▶</span>
-                            </div>
-                        </div>
-                        <div class="item-details-v2">
-                            <span class="item-cat">Games / Foley</span>
-                            <h3>Cyberpunk 2077 Fan OST</h3>
-                            <a href="#" class="item-link">Explore Soundscape</a>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="portfolio-item-v2">
-                        <div class="item-image-wrap">
-                            <img src="https://tse2.mm.bing.net/th/id/OIP.CA3C6ApnGTX5169nTmUuBAHaE8?pid=Api&P=0&h=180"
-                                alt="Nike">
-                            <div class="item-overlay-simple">
-                                <span class="play-icon-v2">▶</span>
-                            </div>
-                        </div>
-                        <div class="item-details-v2">
-                            <span class="item-cat">Commercial / Mixing</span>
-                            <h3>Nike: The Beat Within</h3>
-                            <a href="#" class="item-link">Explore Soundscape</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="view-more">
-                    <a href="portfolio.html" class="btn btn-primary">Browse Full Portfolio</a>
-                </div>
+            <div style="padding: 3rem;">
+              <h3 style="margin-bottom: 1.5rem; text-transform: uppercase;">Foley Arts</h3>
+              <p style="opacity: 0.7; font-size: 0.9375rem; line-height: 1.7;">Organic, textural captures recorded
+                in-house to breathe physical life into visuals.</p>
             </div>
-        </section>
-
-        <!-- Services Overview Section -->
-        <section id="services-overview">
-            <div class="container">
-                <div class="section-header-minimal">
-                    <h2 class="section-title">Sonic Solutions</h2>
-                    <p>Bespoke audio engineering tailored to architectural precision.</p>
-                </div>
-
-                <div class="services-grid-v2">
-                    <!-- Service 1 -->
-                    <div class="service-card-v2">
-                        <div class="service-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=600&auto=format&fit=crop"
-                                alt="Sound Design">
-                        </div>
-                        <div class="service-content-v2">
-                            <h3>Sound Design</h3>
-                            <p>Crafting unique sonic identities and immersive environments that resonate at every
-                                frequency.</p>
-                            <a href="services.html#sound-design" class="service-link-v2">Discovery Session →</a>
-                        </div>
-                    </div>
-
-                    <!-- Service 2 -->
-                    <div class="service-card-v2">
-                        <div class="service-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1000&auto=format&fit=crop"
-                                alt="Mixing">
-                        </div>
-                        <div class="service-content-v2">
-                            <h3>Mixing</h3>
-                            <p>Engineering perfect balance across all channels, ensuring every detail is felt with
-                                absolute clarity.</p>
-                            <a href="services.html#mixing" class="service-link-v2">Discovery Session →</a>
-                        </div>
-                    </div>
-
-                    <!-- Service 3 -->
-                    <div class="service-card-v2">
-                        <div class="service-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=600&auto=format&fit=crop"
-                                alt="Mastering">
-                        </div>
-                        <div class="service-content-v2">
-                            <h3>Mastering</h3>
-                            <p>Final high-fidelity polish for industry-standard loudness and professional-grade
-                                definition.</p>
-                            <a href="services.html#mastering" class="service-link-v2">Discovery Session →</a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="glass-bg"
+            style="padding: 0; border-radius: var(--radius-lg); border: 1px solid var(--border-color); position: relative; overflow: hidden; text-align: center;">
+            <div
+              style="height: 200px; background: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200') center/cover;">
             </div>
-        </section>
-
-        <!-- Client Logos / Testimonials Section -->
-        <section id="testimonials" class="glass-bg-alt">
-            <div class="container">
-                <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
-                    <h2 class="section-title">Trusted By Industry Leaders</h2>
-                </div>
-
-                <div class="brand-marquee-wrap">
-                    <div class="marquee-label">PROJECT PARTNERS</div>
-                    <div class="marquee-track">
-                        <div class="marquee-content">
-                            <span>WARNER BROS</span>
-                            <span>NETFLIX</span>
-                            <span>UBISOFT</span>
-                            <span>SONY MUSIC</span>
-                            <span>RIOT GAMES</span>
-                            <span>DISNEY+</span>
-                            <!-- Duplicate for seamless scroll -->
-                            <span>WARNER BROS</span>
-                            <span>NETFLIX</span>
-                            <span>UBISOFT</span>
-                            <span>SONY MUSIC</span>
-                            <span>RIOT GAMES</span>
-                            <span>DISNEY+</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonials-grid">
-                    <div class="testimonial-card glass">
-                        <p>"Sonic Architect transformed our game's atmosphere. Their sound design is literally the soul
-                            of the experience."</p>
-                        <div class="client-info">
-                            <strong>James Chen</strong>
-                            <span>Lead Dev, Ubisoft</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-card glass">
-                        <p>"The cleanest mix we've ever received. Every element has its place and the energy is
-                            unmatched."</p>
-                        <div class="client-info">
-                            <strong>Sarah Jenkins</strong>
-                            <span>Director, Netflix</span>
-                        </div>
-                    </div>
-                </div>
+            <div style="padding: 3rem;">
+              <h3 style="margin-bottom: 1.5rem; text-transform: uppercase;">Atmos Mixing</h3>
+              <p style="opacity: 0.7; font-size: 0.9375rem; line-height: 1.7;">Elite Dolby Atmos 7.1.4 delivery and
+                immersive spatial balancing for visual platforms.</p>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Call To Action Section -->
-        <section id="h-cta-v2">
-            <div class="blueprint-grid"></div>
-            <div class="container">
-                <div class="cta-horizon">
-                    <div class="cta-text">
-                        <span class="cta-subtitle">Final Phase</span>
-                        <h2>Ready to Amplify Your Project?</h2>
-                        <div class="cta-scanner-line"></div>
-                    </div>
-                    <div class="cta-actions">
-                        <p>Bespoke audio architecture designed for high-fidelity storytelling.</p>
-                        <div class="cta-btns-v2">
-                            <a href="contact.html" class="btn btn-primary">Initialize Project</a>
-                            <a href="services.html" class="btn btn-outline">Explore Solutions</a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Section 3: Sonic Philosophy (Replacement for Branding) -->
+    <section class="section"
+      style="padding: 10rem 0; background: linear-gradient(rgba(11, 15, 25, 0.9), rgba(11, 15, 25, 0.9)), url('images/studio_environment_cinematic_1775890805738.png') center/cover; background-attachment: fixed; text-align: center; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="container fade-in-up">
+        <h2
+          style="font-size: clamp(2.5rem, 5vw, 4rem); text-transform: uppercase; font-weight: 300; margin-bottom: 5rem; letter-spacing: 0.1em; color: #fff;">
+          The Sonic <span style="font-weight: 900; color: var(--primary);">Philosophy</span></h2>
+        <div class="grid-3" style="gap: 4rem;">
+          <div>
+            <h4
+              style="text-transform: uppercase; color: var(--primary); margin-bottom: 1.5rem; letter-spacing: 0.2em; font-size: 0.8rem;">
+              01. Narrative Weight</h4>
+            <p style="color: #fff; opacity: 0.8; font-size: 1.125rem; font-weight: 300;">Sound is the anchor of the
+              visual narrative. We build layers that don't just accompany the image—they define it.</p>
+          </div>
+          <div>
+            <h4
+              style="text-transform: uppercase; color: var(--primary); margin-bottom: 1.5rem; letter-spacing: 0.2em; font-size: 0.8rem;">
+              02. Spectral Purity</h4>
+            <p style="color: #fff; opacity: 0.8; font-size: 1.125rem; font-weight: 300;">Engineered frequency response
+              that translates perfectly across every playback system, from cinema to handheld.</p>
+          </div>
+          <div>
+            <h4
+              style="text-transform: uppercase; color: var(--primary); margin-bottom: 1.5rem; letter-spacing: 0.2em; font-size: 0.8rem;">
+              03. Spatial Reality</h4>
+            <p style="color: #fff; opacity: 0.8; font-size: 1.125rem; font-weight: 300;">Moving beyond stereo to create
+              immersive volumes that breathe and react to the audience's attention.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Portfolio Subset (Classic) -->
+    <section class="section">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5rem;">
+          <h2 style="font-size: 2.5rem; text-transform: uppercase;">Case <span
+              style="color: var(--primary);">Signals</span></h2>
+          <a href="work.html" class="nav-link" style="color: var(--primary); font-weight: 700;">Full Archive →</a>
+        </div>
+        <div class="grid-2" style="gap: 2.5rem;">
+          <div
+            style="border-radius: var(--radius-lg); overflow: hidden; position: relative; border: 1px solid var(--border-color);">
+            <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200" alt="Work"
+              style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: 2.5rem; background: var(--surface-1);">
+              <h4 style="margin-bottom: 0.5rem; text-transform: uppercase;">The Harmonic Void</h4>
+              <p style="opacity: 0.6; font-size: 0.875rem;">Cinematic Soundscape</p>
             </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="glass-bg-alt">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-brand">
-                        <a href="index.html" class="logo">
-                            <img src="images/logo.svg" alt="Sonic Architect Logo">
-                            SONIC
-                        </a>
-                        <p>Freelance Sound Engineer & Designer</p>
-                        <div class="footer-search">
-                            <h4>Search Site</h4>
-                            <form class="search-form">
-                                <input type="text" placeholder="Search projects...">
-                                <button type="submit" class="btn btn-primary">Go</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="footer-links">
-                        <h4>Navigation</h4>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="portfolio.html">Portfolio</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-services">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="services.html#sound-design">Sound Design</a></li>
-                            <li><a href="services.html#mixing">Mixing</a></li>
-                            <li><a href="services.html#mastering">Mastering</a></li>
-                            <li><a href="services.html#foley">Foley Arts</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-social">
-                        <h4>Connect</h4>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <svg class="footer-social-icon" viewBox="0 0 24 24">
-                                        <path
-                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                                    </svg>
-                                    LinkedIn
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <svg class="footer-social-icon" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                                    </svg>
-                                    Instagram
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <svg class="footer-social-icon" viewBox="0 0 24 24">
-                                        <path
-                                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                                    </svg>
-                                    Twitter
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2026 Sonic Architect. All rights reserved.</p>
-                </div>
+          </div>
+          <div
+            style="border-radius: var(--radius-lg); overflow: hidden; position: relative; border: 1px solid var(--border-color);">
+            <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?q=80&w=1200" alt="Work"
+              style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: 2.5rem; background: var(--surface-1);">
+              <h4 style="margin-bottom: 0.5rem; text-transform: uppercase;">Kinetic Energy</h4>
+              <p style="opacity: 0.6; font-size: 0.875rem;">Game Audio Integration</p>
             </div>
-        </footer>
-    </main>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script src="js/script.js"></script>
+    <!-- Section 5: The Technical Arsenal (NEW) -->
+    <section class="section" style="background-color: var(--bg-color); border-top: 1px solid var(--border-color);">
+      <div class="container fade-in-up">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
+          <h2 style="text-transform: uppercase; letter-spacing: -0.02em; margin-bottom: 1.5rem;">Technical Arsenal</h2>
+          <p style="opacity: 0.8;">The precision instruments and industry standards defining every AURA signal.</p>
+        </div>
+        <div class="grid-3" style="gap: 2rem;">
+          <div
+            style="padding: 0; background: var(--surface-1); border: 1px solid var(--border-color); border-radius: var(--radius-lg); text-align: center; overflow: hidden;">
+            <div
+              style="height: 180px; background: url('https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?q=80&w=1200') center/cover;">
+            </div>
+            <div style="padding: 2.5rem;">
+              <h4 style="text-transform: uppercase; margin-bottom: 1rem;">DAW Standards</h4>
+              <p style="font-size: 0.875rem; opacity: 0.7;">Pro Tools | Ultimate & Logic Pro environment for lossless
+                signal integrity.</p>
+            </div>
+          </div>
+          <div
+            style="padding: 0; background: var(--surface-1); border: 1px solid var(--border-color); border-radius: var(--radius-lg); text-align: center; overflow: hidden;">
+            <div
+              style="height: 180px; background: url('images/studio_environment_cinematic_1775890805738.png') center/cover;">
+            </div>
+            <div style="padding: 2.5rem;">
+              <h4 style="text-transform: uppercase; margin-bottom: 1rem;">Object Mix</h4>
+              <p style="font-size: 0.875rem; opacity: 0.7;">Dolby Atmos 7.1.4 calibrated mixing environment for 3D
+                spatial delivery.</p>
+            </div>
+          </div>
+          <div
+            style="padding: 0; background: var(--surface-1); border: 1px solid var(--border-color); border-radius: var(--radius-lg); text-align: center; overflow: hidden;">
+            <div style="height: 180px; background: url('images/studio_gear_analog_1775890790411.png') center/cover;">
+            </div>
+            <div style="padding: 2.5rem;">
+              <h4 style="text-transform: uppercase; margin-bottom: 1rem;">Field Capture</h4>
+              <p style="font-size: 0.875rem; opacity: 0.7;">High-resolution 192kHz/24-bit organic texture recording for
+                unique sonic signatures.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials (Classic Glass) -->
+    <section class="section" style="background-color: var(--surface-1);">
+      <div class="container">
+        <div class="grid-2" style="gap: 3rem;">
+          <div class="glass-bg testimonial-card"
+            style="padding: 4rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); position: relative; transition: all 0.4s ease;">
+            <p style="font-size: 1.25rem; font-style: italic; opacity: 0.9; margin-bottom: 2.5rem; line-height: 1.7;">
+              "Their sound design is literally the soul of the experience. Sonic architecture transformed our game’s
+              atmosphere."</p>
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400" alt="James Chen" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
+              <div>
+                <strong style="display: block; font-size: 1.1rem;">James Chen</strong>
+                <span style="font-size: 0.75rem; opacity: 0.5; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary);">Lead Dev, Ubisoft</span>
+              </div>
+            </div>
+          </div>
+          <div class="glass-bg testimonial-card"
+            style="padding: 4rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); position: relative; transition: all 0.4s ease;">
+            <p style="font-size: 1.25rem; font-style: italic; opacity: 0.9; margin-bottom: 2.5rem; line-height: 1.7;">
+              "The cleanest mix we’ve ever received. Every element has its place and the energy is unmatched."</p>
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400" alt="Sarah Jenkins" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
+              <div>
+                <strong style="display: block; font-size: 1.1rem;">Sarah Jenkins</strong>
+                <span style="font-size: 0.75rem; opacity: 0.5; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary);">Director, Netflix</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call To Action (Classic Blueprint) -->
+    <section id="h-cta-v2" class="section"
+      style="border-top: 1px solid var(--border-color); position: relative; overflow: hidden; background-color: #0b0f19;">
+      <div class="blueprint-grid" style="position: absolute; top:0; left: 0; width: 100%; height: 100%; opacity: 0.05; background-image: 
+        linear-gradient(rgba(6,182,212,0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6,182,212,0.2) 1px, transparent 1px);
+        background-size: 50px 50px;"></div>
+      <div class="container" style="position: relative; z-index: 10; text-align: center;">
+        <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); text-transform: uppercase; margin-bottom: 1.5rem; color: #fff;">
+          Ready to Amplify Your Project?</h2>
+        <p style="font-size: 1.25rem; opacity: 0.8; max-width: 600px; margin: 0 auto 4rem; color: #fff;">Bespoke audio
+          architecture designed for high-fidelity storytelling.</p>
+        <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-primary" style="padding: 1.25rem 3.5rem; font-weight: 800;">Initialize Project</a>
+          <a href="services.html" class="btn btn-secondary"
+            style="border: 2px solid rgba(255,255,255,0.6); background: rgba(255, 255, 255, 0.1); color: #fff; padding: 1.25rem 3.5rem; font-weight: 700; backdrop-filter: blur(5px);">Explore Solutions</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer (Standardized) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="margin-bottom: 1.5rem; display: flex;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+              <path d="M2 12h4l3-9 5 18 3-9h5"></path>
+            </svg>
+            AURA<span>SOUND</span>
+          </a>
+          <p style="font-size: 0.875rem; line-height: 1.6;">Crafting hyper-realistic and cinematic soundscapes for the
+            next generation of visual media.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="work.html" class="footer-link">Portfolio</a>
+            <a href="services.html" class="footer-link">Services</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Expertise</h4>
+          <div class="footer-links">
+            <a href="services.html#sound-design" class="footer-link">Sound Design</a>
+            <a href="services.html#foley" class="footer-link">Foley Art</a>
+            <a href="services.html#atmos" class="footer-link">Atmos Mixing</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <div class="footer-links">
+            <a href="contact.html" class="footer-link">Contact Us</a>
+            <a href="#" class="footer-link">Instagram</a>
+            <a href="#" class="footer-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AURA SOUND Studio. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" title="Back to Top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="js/script.js"></script>
 </body>
 
 </html>

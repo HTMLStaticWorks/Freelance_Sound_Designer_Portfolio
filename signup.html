@@ -4,17 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AURA SOUND | Login</title>
-  <meta name="description" content="Login to Aura Sound Dashboard.">
+  <title>AURA SOUND | Sign Up</title>
+  <meta name="description" content="Create an account on Aura Sound.">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Additions for better remember-me alignment */
-    .checkbox-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-  </style>
 </head>
 
 <body class="auth-page">
@@ -54,8 +46,8 @@
       AURA<span>SOUND</span>
     </a>
 
-    <h2 class="auth-title">Welcome Back</h2>
-    <p class="auth-subtitle">Log in to your client dashboard.</p>
+    <h2 class="auth-title">Create Account</h2>
+    <p class="auth-subtitle">Start your sonic journey with us.</p>
 
     <!-- Social Logins -->
     <div class="social-btns">
@@ -64,7 +56,7 @@
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-sm">
           <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
         </svg>
-        Continue with Google
+        Sign up with Google
       </button>
       <button class="btn btn-social">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -74,14 +66,21 @@
           </path>
           <path d="M10 2c1 .5 2 2 2 5h-2c0-3-1-4-2-5Z"></path>
         </svg>
-        Continue with Apple
+        Sign up with Apple
       </button>
     </div>
 
-    <div class="auth-divider">or log in with email</div>
+    <div class="auth-divider">or create with email</div>
 
-    <!-- Login Form -->
+    <!-- Signup Form -->
     <form action="dashboard.html" method="GET">
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <div class="input-wrapper">
+          <input type="text" id="name" class="input" placeholder="John Doe" required>
+        </div>
+      </div>
 
       <div class="form-group">
         <label for="email">Email Address</label>
@@ -105,21 +104,12 @@
         </div>
       </div>
 
-      <!-- Remember Me & Forgot Password -->
-      <div class="form-row">
-        <label class="checkbox-wrapper">
-          <input type="checkbox" id="remember">
-          <span style="font-weight: 400;">Remember me</span>
-        </label>
-        <a href="#" style="color: var(--primary); font-weight: 500;">Forgot Password?</a>
-      </div>
-
-      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Log In</button>
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Create Account</button>
 
     </form>
 
     <p style="text-align: center; margin-top: 2rem; font-size: 0.875rem;">
-      Don't have an account? <a href="signup.html" style="color: var(--primary); font-weight: 600;">Sign Up</a>
+      Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 600;">Log In</a>
     </p>
 
   </div>

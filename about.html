@@ -1,645 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonic Architect | About - The Visionary Behind the Sound</title>
-    <meta name="description"
-        content="Meet the Sonic Architect. Over 10 years of experience in sculpting immersive audio experiences for film, games, and music.">
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/rtl.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
-    <style>
-        /* About Hero Section */
-        #about-hero {
-            padding: 8rem 0 6rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=1920') center/cover;
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #about-hero h1 {
-            font-size: 5rem;
-            letter-spacing: -2px;
-            margin-bottom: 1rem;
-        }
-
-        .hero-tech-meta {
-            color: var(--accent);
-            font-family: var(--font-heading);
-            font-size: 0.9rem;
-            letter-spacing: 5px;
-            margin-bottom: 2rem;
-            opacity: 0.8;
-            font-weight: 700;
-        }
-
-        /* Bio Section Redesign */
-        .story-section {
-            padding: 12rem 0;
-            background: var(--bg-dark);
-        }
-
-        .bio-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8rem;
-            align-items: center;
-        }
-
-        .bio-visual {
-            position: relative;
-        }
-
-        .visual-frame {
-            position: relative;
-            border-radius: 30px;
-            overflow: hidden;
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
-        }
-
-        .visual-frame img {
-            width: 100%;
-            height: auto;
-            filter: grayscale(1);
-            transition: var(--transition-smooth);
-        }
-
-        .visual-frame:hover img {
-            filter: grayscale(0);
-            transform: scale(1.05);
-        }
-
-        .visual-deco-text {
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-            font-family: var(--font-heading);
-            font-size: 10rem;
-            color: var(--accent);
-            opacity: 0.05;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .bio-info h2 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 2.5rem;
-            letter-spacing: -1px;
-        }
-
-        .bio-info p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            opacity: 0.7;
-            margin-bottom: 2rem;
-        }
-
-        .signature {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
-            color: var(--accent);
-            margin-top: 3rem;
-            display: block;
-            letter-spacing: 3px;
-        }
-
-        /* Philosophy Grid */
-        .philosophy-section {
-            padding: 10rem 0;
-            background: var(--bg-sec);
-        }
-
-        .philosophy-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-        }
-
-        .philosophy-card {
-            padding: 4rem 3rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            transition: var(--transition-smooth);
-            text-align: center;
-        }
-
-        .philosophy-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-10px);
-            background: rgba(255, 45, 45, 0.02);
-        }
-
-        .phil-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 2rem;
-            display: block;
-        }
-
-        .philosophy-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
-        }
-
-        .philosophy-card p {
-            opacity: 0.6;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        /* The Lab (Arsenal) */
-        .lab-section {
-            padding: 12rem 0;
-        }
-
-        .lab-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .lab-cat {
-            padding: 4rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 30px;
-        }
-
-        .lab-cat h3 {
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .lab-cat ul {
-            list-style: none;
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .lab-cat ul li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            opacity: 0.7;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition-smooth);
-        }
-
-        .lab-cat ul li:hover {
-            opacity: 1;
-            color: var(--accent);
-            transform: translateX(10px);
-        }
-
-        .lab-item-meta {
-            font-family: monospace;
-            font-size: 0.7rem;
-            color: var(--accent);
-        }
-
-        /* Milestones (Timeline) */
-        .milestones-section {
-            padding: 10rem 0 15rem;
-            background: var(--bg-sec);
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 6rem auto 0;
-            padding: 2rem 0;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background: var(--accent);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1px;
-            opacity: 0.2;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            right: -6px;
-            background-color: var(--bg-dark);
-            border: 2px solid var(--accent);
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-            box-shadow: 0 0 10px var(--accent);
-        }
-
-        .left {
-            left: 0;
-        }
-
-        .right {
-            left: 50%;
-        }
-
-        .right::after {
-            left: -6px;
-        }
-
-        .timeline-content {
-            padding: 2rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-        }
-
-        .timeline-content .date {
-            font-family: monospace;
-            color: var(--accent);
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .timeline-content h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-content p {
-            font-size: 0.9rem;
-            opacity: 0.5;
-        }
-
-        @media (max-width: 1080px) {
-            .philosophy-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .lab-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .bio-split {
-                grid-template-columns: 1fr;
-                gap: 5rem;
-                text-align: center;
-            }
-
-            #about-hero h1 {
-                font-size: 3.5rem;
-            }
-
-            .timeline::after {
-                left: 31px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-
-            .timeline-item::after {
-                left: 25px;
-            }
-
-            .right {
-                left: 0%;
-            }
-
-            .lab-cat h3 {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-
-            .lab-cat ul li {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.3rem;
-                padding: 1.2rem 0;
-            }
-
-            .section-header-minimal {
-                margin-bottom: 3rem !important;
-            }
-        }
-
-        @media (max-width: 992px) {
-            #about-hero h1 {
-                font-size: 3.5rem;
-            }
-
-            .bio-split {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-                text-align: center;
-            }
-
-            .bio-visual {
-                padding: 0 2rem;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-
-            .bio-info h2 {
-                font-size: 2.5rem;
-            }
-
-            .story-section {
-                padding: 6rem 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA SOUND | Behind the Master Signal</title>
+  <meta name="description"
+    content="Explore the origins and philosophy of Aura Sound Studio. Meet the studio persona behind the elite cinematic signals.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
 
-    <header id="main-header">
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="images/logo.svg" alt="Sonic Architect Logo">
-                    SONIC
-                </a>
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-inner flex-between">
+      <a href="index.html" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+          stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+          <path d="M2 12h4l3-9 5 18 3-9h5"></path>
+        </svg>
+        AURA<span>SOUND</span>
+      </a>
 
-                <ul class="nav-links">
-                    <li><a href="index.html">Home 1</a></li>
-                    <li><a href="home-2.html">Home 2</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="register.html" class="btn btn-primary btn-signup">Sign Up</a></li>
-                    <li class="nav-actions">
-                        <button id="rtl-toggle" class="btn-theme" title="Toggle RTL"
-                            style="font-size: 0.7rem; font-weight: 700;">RTL</button>
-                        <button id="theme-toggle" class="btn-theme" title="Toggle Theme">☀️</button>
-                    </li>
-                </ul>
-                <div class="header-actions">
-                    <div class="mobile-menu-btn">☰</div>
-                </div>
+      <button class="menu-toggle icon-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
 
-            </nav>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home1</a>
+        <a href="home2.html" class="nav-link">Home2</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="work.html" class="nav-link">Work</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+
+        <div class="nav-actions">
+          <button class="icon-btn rtl-toggle" title="Toggle RTL">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-sm">
+              <path d="M20 8H4M8 4l-4 4 4 4"></path>
+              <path d="M4 16h16M16 12l4 4-4 4"></path>
+            </svg>
+          </button>
+          <button class="icon-btn theme-toggle" title="Toggle Dark/Light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-sm">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+          <a href="contact.html" class="btn btn-primary">Reach Us</a>
         </div>
-    </header>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <!-- 1. Hero Section -->
-        <section id="about-hero">
-            <div class="container">
-                <div class="hero-tech-meta">/ ARTIST PROTOCOL</div>
-                <h1>THE ARCHITECT</h1>
+  <main style="padding-top: var(--nav-height); flex: 1;">
+
+    <!-- SECTION 1: Cinematic About Hero -->
+    <section class="section"
+      style="min-height: 50vh; display: flex; align-items: center; justify-content: center; position: relative; background: radial-gradient(circle at top right, var(--surface-2) 0%, var(--bg-color) 60%); overflow: hidden;">
+      <div class="container fade-in-up" style="position: relative; z-index: 10; text-align: center;">
+        <p
+          style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 1rem;">
+          The Master Signal</p>
+        <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.2; margin-bottom: 2rem;">Sonic <span
+            style="display: inline-block; color: var(--primary); font-weight: 900; letter-spacing: -0.01em; filter: drop-shadow(0 0 5px rgba(6, 182, 212, 0.3));">Vision</span>
+        </h1>
+        <p style="max-width: 700px; margin: 0 auto; font-size: 1.125rem; opacity: 0.8; line-height: 1.6;">We don't just
+          record waveforms; we architect emotional responses. Behind every pixel is a story that only frequency can
+          tell.
+        </p>
+      </div>
+      <div
+        style="position: absolute; right: -10%; top: 20%; width: 50%; height: 60%; background: linear-gradient(135deg, var(--primary) 0%, transparent 70%); opacity: 0.05; filter: blur(100px); pointer-events: none;">
+      </div>
+    </section>
+
+    <!-- SECTION 2: Our Origins (Bio with Persona Image) -->
+    <section class="section">
+      <div class="container fade-in-up">
+        <div class="grid-2" style="gap: 6rem; align-items: center;">
+          <div style="position: relative;">
+            <div
+              style="aspect-ratio: 4/5; background: url('images/studio_persona_moody_1775890774664.png') center/cover; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: 0 30px 60px rgba(0,0,0,0.4);">
             </div>
-        </section>
-
-        <!-- 2. Section 1: The Story (Bio) -->
-        <section class="story-section">
-            <div class="container">
-                <div class="bio-split">
-                    <div class="bio-visual">
-                        <div class="visual-frame">
-                            <img src="https://images.unsplash.com/photo-1590602846989-e99596d2a6ee?q=80&w=1000&auto=format&fit=crop"
-                                alt="Sonic Architect Profile">
-                        </div>
-                        <div class="visual-deco-text">SA</div>
-                    </div>
-                    <div class="bio-info">
-                        <span class="subtitle">Execution & Vision</span>
-                        <h2>Architecting Immersive Sound.</h2>
-                        <p>Engineering auditory worlds for over a decade. Driven by technical precision and organic
-                            emotion, we sculpt frequencies that resonate across every channel.</p>
-                        <span class="signature">/ SONIC ARCHITECT</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Section 2: Core Philosophy -->
-        <section class="philosophy-section">
-            <div class="container">
-                <div class="section-header-minimal" style="text-align: center; margin-bottom: 6rem;">
-                    <span class="item-cat" style="margin-bottom: 1rem;">SONIC BELIEFS</span>
-                    <h2 class="section-title" style="margin-bottom: 2rem;">CORE PHILOSOPHY</h2>
-                </div>
-
-                <div class="philosophy-grid">
-                    <div class="philosophy-card">
-                        <span class="phil-icon">◈</span>
-                        <h3>Precision</h3>
-                        <p>We treat every decibel as a structural component, engineering clarity into the most complex
-                            soundscapes.</p>
-                    </div>
-                    <div class="philosophy-card">
-                        <span class="phil-icon">⟐</span>
-                        <h3>Immersion</h3>
-                        <p>Audio shouldn't just be heard; it should be felt. We create spatial experiences that
-                            transport the listener.</p>
-                    </div>
-                    <div class="philosophy-card">
-                        <span class="phil-icon">◇</span>
-                        <h3>Innovation</h3>
-                        <p>Rejecting the generic. We use custom synthesis and unique foley to craft sounds that have
-                            never existed.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Section 3: The Lab (Arsenal) -->
-        <section class="lab-section">
-            <div class="container">
-                <div class="section-header-minimal" style="text-align: center; margin-bottom: 6rem;">
-                    <span class="item-cat" style="margin-bottom: 1rem;">TECHNICAL STACK</span>
-                    <h2 class="section-title" style="margin-bottom: 2rem;">THE ARSENAL</h2>
-                    <p style="max-width: 600px; margin: 0 auto; opacity: 0.6;">A high-end hybrid workflow combining
-                        analog character with digital precision.</p>
-                </div>
-
-                <div class="lab-grid">
-                    <div class="lab-cat">
-                        <h3>Hardware <span style="font-size: 0.8rem; opacity: 0.3; margin-left: auto;">[ OUTBOARD
-                                ]</span></h3>
-                        <ul>
-                            <li>Rupert Neve Designs Shelford Channel <span class="lab-item-meta">ANALOG PREAMP</span>
-                            </li>
-                            <li>Empirical Labs Distressor EL8-X <span class="lab-item-meta">DYNAMICS</span></li>
-                            <li>Beyerdynamic DT 1990 Pro <span class="lab-item-meta">MONITORING</span></li>
-                            <li>Sennheiser MKH 416 <span class="lab-item-meta">CAPTURE</span></li>
-                        </ul>
-                    </div>
-                    <div class="lab-cat">
-                        <h3>Software <span style="font-size: 0.8rem; opacity: 0.3; margin-left: auto;">[ DIGITAL
-                                ]</span></h3>
-                        <ul>
-                            <li>iZotope RX 11 Advanced <span class="lab-item-meta">RESTORATION</span></li>
-                            <li>FabFilter Total Bundle <span class="lab-item-meta">PRECISION</span></li>
-                            <li>Soundtoys 5 <span class="lab-item-meta">CREATIVE</span></li>
-                            <li>Native Instruments Komplete <span class="lab-item-meta">SYNTHESIS</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Section 4: Milestones -->
-        <section class="milestones-section last-section-fix">
-            <div class="container">
-                <div class="section-header-minimal" style="text-align: center; margin-bottom: 4rem;">
-                    <span class="item-cat" style="margin-bottom: 1rem;">EVOLUTION</span>
-                    <h2 class="section-title">MILESTONES</h2>
-                </div>
-
-                <div class="timeline">
-                    <!-- Milestone 1 -->
-                    <div class="timeline-item left">
-                        <div class="timeline-content">
-                            <span class="date">2014 &mdash; THE GENESIS</span>
-                            <h4>Studio Launch</h4>
-                            <p>Founded Sonic Architect in London, focused on experimental sound synthesis.</p>
-                        </div>
-                    </div>
-
-                    <!-- Milestone 2 -->
-                    <div class="timeline-item right">
-                        <div class="timeline-content">
-                            <span class="date">2018 &mdash; CINEMATIC SHIFT</span>
-                            <h4>First Feature Film</h4>
-                            <p>Lead Sound Design for "Stellar Horizon," winning the Indiefilm Audio Award.</p>
-                        </div>
-                    </div>
-
-                    <!-- Milestone 3 -->
-                    <div class="timeline-item left">
-                        <div class="timeline-content">
-                            <span class="date">2021 &mdash; INTERACTIVE AGE</span>
-                            <h4>AAA Integration</h4>
-                            <p>Partnered with major game studios for procedural foley implementation.</p>
-                        </div>
-                    </div>
-
-                    <!-- Milestone 4 -->
-                    <div class="timeline-item right">
-                        <div class="timeline-content">
-                            <span class="date">2024 &mdash; BEYOND THE HORIZON</span>
-                            <h4>Next-Gen Audio Lab</h4>
-                            <p>Expanded to a custom-built Atmos-certified mixing environment in London.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="glass-bg-alt">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="logo">
-                        <img src="images/logo.svg" alt="Sonic Architect Logo">
-                        SONIC
-                    </a>
-                    <p>Freelance Sound Engineer & Designer</p>
-                    <div class="footer-search">
-                        <h4>Search Site</h4>
-                        <form class="search-form">
-                            <input type="text" placeholder="Search projects...">
-                            <button type="submit" class="btn btn-primary">Go</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-services">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html#sound-design">Sound Design</a></li>
-                        <li><a href="services.html#mixing">Mixing</a></li>
-                        <li><a href="services.html#mastering">Mastering</a></li>
-                        <li><a href="services.html#foley">Foley Arts</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <svg class="footer-social-icon" viewBox="0 0 24 24">
-                                    <path
-                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                                </svg>
-                                LinkedIn
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <svg class="footer-social-icon" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                                </svg>
-                                Instagram
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <svg class="footer-social-icon" viewBox="0 0 24 24">
-                                    <path
-                                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                                </svg>
-                                Twitter
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Sonic Architect. All rights reserved.</p>
-            </div>
+            <div
+              style="position: absolute; bottom: 2rem; right: -2rem; background: var(--primary); color: #000; padding: 1rem 2rem; border-radius: var(--radius-sm); font-weight: 900; transform: rotate(-3deg); box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);">
+              EST. 2012</div>
+          </div>
+          <div>
+            <h2 style="text-transform: uppercase; margin-bottom: 2rem;">The Studio Persona</h2>
+            <p style="font-size: 1.125rem; line-height: 1.8; opacity: 0.8; margin-bottom: 2rem;">Driven by the
+              relentless pursuit of sonic perfection, Aura Sound was founded on the belief that audio is the soul of
+              visual media. For over a decade, we have been crafting the "invisible" layer that connects an audience to
+              the narrative.</p>
+            <p style="font-size: 1.125rem; line-height: 1.8; opacity: 0.8;">From capturing the subtle friction of a
+              desert wind to processing heavy industrial transients, our process is purely organic and narratively
+              driven.</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="js/script.js"></script>
+    <!-- SECTION 3: Design Manifesto (Centered) -->
+    <section class="section" style="background-color: var(--surface-1); position: relative; overflow: hidden;">
+      <div class="container fade-in-up" style="text-align: center; max-width: 900px; position: relative; z-index: 10;">
+        <h2
+          style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; color: var(--primary); margin-bottom: 3rem;">
+          Creative Manifesto</h2>
+        <blockquote
+          style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.3; font-weight: 800; color: var(--text-main); margin-bottom: 4rem;">
+          "Sound shouldn't just be heard, it must be felt at a <span style=" color: var(--primary);">frequency</span>
+          that transcends the screen."</blockquote>
+        <p style="font-size: 1.25rem; opacity: 0.7; line-height: 1.8;">We avoid generic libraries, choosing instead to
+          record, synthesize, and calibrate every unique texture from scratch. Our goal is 100% sonic originality for
+          every collaborator.</p>
+      </div>
+      <div
+        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 80%; background: radial-gradient(circle, var(--primary) 0%, transparent 60%); opacity: 0.03; pointer-events: none;">
+      </div>
+    </section>
+
+    <!-- SECTION 4: Technical Arsenal (Gear Grid) -->
+    <section class="section">
+      <div class="container fade-in-up">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem;">
+          <div>
+            <h2 style="text-transform: uppercase; letter-spacing: -0.02em;">Technical Arsenal</h2>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">The precision instruments behind the signals.</p>
+          </div>
+        </div>
+
+        <div class="grid-3" style="gap: 3rem;">
+          <div>
+            <div
+              style="aspect-ratio: 16/10; background: url('images/studio_gear_analog_1775890790411.png') center/cover; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 2rem;">
+            </div>
+            <h4 style="margin-bottom: 1rem; text-transform: uppercase;">Analog Signal Paths</h4>
+            <p style="font-size: 0.9375rem; opacity: 0.7; line-height: 1.6;">Neve, SSL, and boutique outboard gear for
+              harmonic depth and warmth.</p>
+          </div>
+          <div>
+            <div
+              style="aspect-ratio: 16/10; background: url('images/studio_environment_cinematic_1775890805738.png') center/cover; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 2rem;">
+            </div>
+            <h4 style="margin-bottom: 1rem; text-transform: uppercase;">Atmos Lab</h4>
+            <p style="font-size: 0.9375rem; opacity: 0.7; line-height: 1.6;">A calibrated PMC 7.1.4 monitor array for
+              critical 3D spatial integration.</p>
+          </div>
+          <div>
+            <div
+              style="aspect-ratio: 16/10; background: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1200') center/cover; border-radius: var(--radius-md); border: 1px solid var(--primary); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; position: relative; overflow: hidden;">
+
+
+            </div>
+            <h4 style="margin-bottom: 1rem; text-transform: uppercase;">Field Capture</h4>
+            <p style="font-size: 0.9375rem; opacity: 0.7; line-height: 1.6;">96kHz/24-bit high-resolution recording for
+              hyper-detailed textures.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Studio Integrity (Trust) -->
+    <section class="section"
+      style="background-color: var(--surface-1); border-top: 1px solid var(--border-color); text-align: center;">
+      <div class="container fade-in-up">
+        <h2 style="text-transform: uppercase; letter-spacing: -0.02em; margin-bottom: 4rem;">Studio Legacy</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6rem; opacity: 0.5;">
+          <h3 style="font-size: 1.5rem; letter-spacing: 0.2em; font-weight: 300;">ASTRA FILMS</h3>
+          <h3 style="font-size: 1.5rem; letter-spacing: 0.2em; font-weight: 300;">NEXUS GAMES</h3>
+          <h3 style="font-size: 1.5rem; letter-spacing: 0.2em; font-weight: 300;">OMNI AUTO</h3>
+          <h3 style="font-size: 1.5rem; letter-spacing: 0.2em; font-weight: 300;">V-TECH</h3>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="margin-bottom: 1.5rem; display: flex;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+              <path d="M2 12h4l3-9 5 18 3-9h5"></path>
+            </svg>
+            AURA<span>SOUND</span>
+          </a>
+          <p style="font-size: 0.875rem; line-height: 1.6;">Crafting hyper-realistic and cinematic soundscapes for the
+            next generation of visual media.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="work.html" class="footer-link">Portfolio</a>
+            <a href="services.html" class="footer-link">Services</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Expertise</h4>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Sound Design</a>
+            <a href="#" class="footer-link">Foley Art</a>
+            <a href="#" class="footer-link">Game Audio</a>
+            <a href="#" class="footer-link">Mixing & Mastering</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <div class="footer-links">
+            <a href="contact.html" class="footer-link">Contact Us</a>
+            <a href="#" class="footer-link">Instagram</a>
+            <a href="#" class="footer-link">LinkedIn</a>
+            <a href="#" class="footer-link">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AURA SOUND Studio. All Rights Reserved.</p>
+        <div style="display: flex; gap: 2rem;">
+          <a href="#" class="footer-link" style="font-size: 0.75rem;">Privacy Policy</a>
+          <a href="#" class="footer-link" style="font-size: 0.75rem;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" title="Back to Top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="js/script.js"></script>
 </body>
 
 </html>
