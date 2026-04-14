@@ -233,12 +233,6 @@ p {
   fill: none;
 }
 
-.toggles-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
 .icon-sm {
   width: 18px;
   height: 18px;
