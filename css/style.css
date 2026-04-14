@@ -19,6 +19,7 @@
   --text-muted: #9ca3af;
   --border-color: #374151;
   --shadow-color: rgba(0, 0, 0, 0.5);
+  --hero-bg: #0b0f19;
 
   /* Layout & Spacing */
   --container-max: 1280px;
@@ -43,6 +44,7 @@
   --text-muted: #64748b;
   --border-color: #e2e8f0;
   --shadow-color: rgba(0, 0, 0, 0.05);
+  --hero-bg: #EFF5F9;
 }
 
 /* RTL Support */
@@ -1238,7 +1240,7 @@ label {
 
   .section .grid-2>div {
     width: 100%;
-    max-width: 800px;
+
   }
 
   .section .grid-2 ul {
@@ -1263,7 +1265,7 @@ label {
   }
 
   /* Target the first column (details) separately to center it */
-  .contact-section-grid > div:first-child {
+  .contact-section-grid>div:first-child {
     width: 100% !important;
     max-width: 100% !important;
     display: flex !important;
@@ -1273,7 +1275,7 @@ label {
   }
 
   /* Specific fix for the form column to remain stretch/wide */
-  .contact-section-grid > div:last-child {
+  .contact-section-grid>div:last-child {
     width: 100% !important;
     max-width: 100% !important;
     display: flex !important;
@@ -1292,7 +1294,7 @@ label {
   }
 
   /* ENSURE ICON REMAINS A CIRCLE (Fixing the oval stretching seen in visual feedback) */
-  .contact-section-grid div[style*="display: flex"] > div:first-child {
+  .contact-section-grid div[style*="display: flex"]>div:first-child {
     flex-shrink: 0 !important;
     margin: 0 auto 0.5rem auto !important;
     width: 56px !important;
@@ -1305,7 +1307,7 @@ label {
     width: 100% !important;
     max-width: 100% !important;
     margin: 2rem 0 0 0 !important;
-    padding: 2.5rem !important; 
+    padding: 2.5rem !important;
     /* Slightly less padding to feel wider */
   }
 }
@@ -1442,4 +1444,74 @@ label {
 /* Fix for testimonial content alignment */
 .testimonial-card p {
   flex: 1;
+}
+
+/* --- 1024px Adjustments --- */
+@media (max-width: 1024px) {
+
+  /* 1. About page */
+  .about-persona-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center;
+    min-width: 0 !important;
+  }
+
+  .about-persona-grid>div {
+    min-width: 0 !important;
+  }
+
+  .persona-image-wrapper {
+    width: 100% !important;
+    max-width: 400px !important;
+    margin: 0 auto 2rem auto !important;
+  }
+
+  .persona-badge {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) rotate(-3deg) !important;
+  }
+
+  /* 2. Home2 page */
+  .sonic-identity-img-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .spatial-frontier-content {
+    text-align: center;
+  }
+
+  .spatial-frontier-content ul {
+    text-align: left;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+  }
+
+  /* 3. Services page */
+  .technical-standards-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .technical-standards-content>div {
+    text-align: center !important;
+  }
+
+  .technical-standards-content ul {
+    text-align: left;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  /* 4. Pricing page */
+  .tech-assurance-img-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
 }
