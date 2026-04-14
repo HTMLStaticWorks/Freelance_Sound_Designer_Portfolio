@@ -233,6 +233,13 @@ p {
   fill: none;
 }
 
+.toggles-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
 .icon-sm {
   width: 18px;
   height: 18px;
@@ -310,6 +317,13 @@ p {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.toggles-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .icon-btn {
@@ -965,6 +979,7 @@ label {
 }
 
 @media (max-width: 1024px) {
+
   /* Portfolio Header Alignment */
   .portfolio-header {
     flex-direction: column !important;
@@ -1031,7 +1046,8 @@ label {
 /* Work Page Responsive Refinements */
 @media (max-width: 1024px) {
   .reel-container {
-    aspect-ratio: 16/9 !important; /* Slightly taller for mobile/tablet */
+    aspect-ratio: 16/9 !important;
+    /* Slightly taller for mobile/tablet */
   }
 
   /* Center Project Log Header */
@@ -1041,7 +1057,7 @@ label {
     text-align: center !important;
     gap: 1.5rem;
   }
-  
+
   .project-log-header div[style*="gap: 1rem"] {
     justify-content: center;
     width: 100%;
@@ -1058,13 +1074,13 @@ label {
 
 /* Sound Reel Visibility & Mobile Overlap Fix */
 .reel-content h2 {
-  text-shadow: 0 4px 30px rgba(0,0,0,0.9);
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
   color: #fff;
 }
 
 .reel-content p {
-  text-shadow: 0 4px 15px rgba(0,0,0,0.9);
-  color: rgba(255,255,255,0.9);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 768px) {
@@ -1074,7 +1090,7 @@ label {
     padding: 4rem 1.5rem !important;
     overflow: hidden !important;
   }
-  
+
   .reel-content {
     padding: 1rem !important;
     display: flex;
@@ -1087,7 +1103,8 @@ label {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4); /* Extra darkening for text visibility */
+    background: rgba(0, 0, 0, 0.4);
+    /* Extra darkening for text visibility */
     z-index: 5;
   }
 }
@@ -1096,7 +1113,7 @@ label {
   margin-top: 1rem;
 }
 
-.project-card > div:first-child {
+.project-card>div:first-child {
   width: 100%;
 }
 
@@ -1106,27 +1123,86 @@ label {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
 /* --- About Page Refinements --- */
 @media (max-width: 1024px) {
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 3rem !important;
+  }
+
+  .grid-2>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .persona-image-wrapper {
+    margin-bottom: 3.5rem;
+    width: 100%;
+  }
+
+  .persona-image-wrapper>div:first-child {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    min-height: 500px;
+  }
+
   .persona-badge {
-    right: 0 !important;
     bottom: 1rem !important;
-    transform: rotate(0deg) !important;
-    padding: 0.75rem 1.5rem !important;
-    font-size: 0.9rem;
+    right: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) rotate(-3deg) !important;
   }
 }
 
-@media (max-width: 768px) {
-  .persona-image-wrapper {
-    margin-bottom: 2rem;
+/* --- Work Page: Studio Methodology Image Fix --- */
+@media (max-width: 1024px) {
+  .studio-methodology .grid-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 3rem !important;
   }
-  
-  .persona-badge {
-    bottom: -1rem !important;
-    right: 50% !important;
-    transform: translateX(50%) !important;
-    width: max-content;
+
+  .studio-methodology .grid-2>div {
+    width: 100% !important;
+    max-width: 600px !important;
+  }
+
+  .studio-methodology .grid-2>div:last-child {
+    min-height: 350px !important;
+    margin: 0 auto !important;
+  }
+
+  .studio-methodology .grid-2>div:last-child>div {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 400px !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Home1 Case Signal Full Width on Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  section:has(.portfolio-header) .grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  section:has(.portfolio-header) .grid-2>div {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .case-card-body {
+    width: 100% !important;
   }
 }
 
@@ -1138,69 +1214,232 @@ label {
   }
 }
 
-/* --- About: Section Centering (Persona & Arsenal) --- */
-@media (max-width: 1024px) {
-  .grid-2 {
-    text-align: center;
-  }
-  .grid-2 > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  h2 {
-    text-align: center;
-  }
-}
-
 /* --- Services: Pipeline & Security Centering --- */
 @media (max-width: 768px) {
   .section h2 {
     text-align: center !important;
   }
+
   /* Digital Workflow Pipeline stacking */
-  .section .container > div[style*='grid-template-columns: repeat(3, 1fr)'] {
+  .section .container>div[style*='grid-template-columns: repeat(3, 1fr)'] {
     grid-template-columns: 1fr !important;
     gap: 3rem !important;
   }
 }
 
 @media (max-width: 1024px) {
+
   /* Signal Security Centering */
   .section .grid-2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  .section .grid-2 > div {
+
+  .section .grid-2>div {
     width: 100%;
     max-width: 800px;
   }
+
   .section .grid-2 ul {
     align-items: center;
-    text-align: left; /* Keep list items left-aligned within the centered container */
+    text-align: left;
+    /* Keep list items left-aligned within the centered container */
     margin: 0 auto;
     width: fit-content;
   }
 }
 
 /* --- Contact: Form Responsive Fix --- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .form-row {
     grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .contact-section-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3.5rem !important;
+  }
+
+  /* Target the first column (details) separately to center it */
+  .contact-section-grid > div:first-child {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* Specific fix for the form column to remain stretch/wide */
+  .contact-section-grid > div:last-child {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: start !important;
+  }
+
+  /* Stack contact detail blocks vertically and center them (Icon Top, Text Bottom) */
+  .contact-section-grid div[style*="display: flex"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+    margin-bottom: 2.5rem !important;
+  }
+
+  /* ENSURE ICON REMAINS A CIRCLE (Fixing the oval stretching seen in visual feedback) */
+  .contact-section-grid div[style*="display: flex"] > div:first-child {
+    flex-shrink: 0 !important;
+    margin: 0 auto 0.5rem auto !important;
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50% !important;
+    box-sizing: border-box !important;
+  }
+
+  .contact-form-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 2rem 0 0 0 !important;
+    padding: 2.5rem !important; 
+    /* Slightly less padding to feel wider */
   }
 }
 
+
+/* Contact form labels always aligned to start */
+.contact-form-container label,
+.contact-form-container .form-group label {
+  text-align: start !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+
+
 /* --- Home2: Hero Button Unification --- */
 .hero-btn-premium {
-  min-width: 250px;
+  min-width: 200px;
   justify-content: center;
 }
 
-@media (max-width: 768px) {
+/* Hero buttons on same line in tablet */
+@media (min-width: 500px) {
+  .hero-buttons-wrapper {
+    flex-wrap: nowrap !important;
+    gap: 1.5rem !important;
+  }
+
+  .hero-buttons-wrapper .btn {
+    flex: 0 0 auto !important;
+    width: auto !important;
+  }
+}
+
+@media (max-width: 499px) {
+  .hero-buttons-wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
   .hero-btn-premium {
     width: 100% !important;
     max-width: 320px !important;
     margin: 0 auto;
   }
+}
+
+/* --- Technical Arsenal: Center header in tablet/mobile --- */
+@media (max-width: 1024px) {
+  .technical-arsenal-header {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1rem !important;
+  }
+
+  .technical-arsenal-header>div {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .technical-arsenal-header h2,
+  .technical-arsenal-header p {
+    text-align: center !important;
+  }
+
+  .arsenal-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 3rem !important;
+  }
+
+  .arsenal-grid>div {
+    text-align: center !important;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .arsenal-grid>div h4 {
+    text-align: center !important;
+  }
+
+  .arsenal-grid>div p {
+    text-align: center !important;
+  }
+}
+
+/* --- Pricing Cards: Center in tablet/mobile --- */
+@media (max-width: 1024px) {
+  .pricing-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    width: 100% !important;
+  }
+
+  .pricing-grid>.pricing-card {
+    width: 100% !important;
+    max-width: 480px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    transform: none !important;
+    /* reset popular card scale on mobile */
+  }
+}
+
+/* --- Equal Height Cards for Home1 --- */
+.equal-height-grid {
+  display: grid !important;
+  align-items: stretch !important;
+}
+
+.equal-height-grid>div {
+  width: 100% !important;
+  /* Ensure full width when stacked */
+  height: 100%;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Ensure the body or card itself fills the height */
+.equal-height-grid>div .case-card-body,
+.equal-height-grid>div.testimonial-card,
+.testimonial-card {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Fix for testimonial content alignment */
+.testimonial-card p {
+  flex: 1;
 }
