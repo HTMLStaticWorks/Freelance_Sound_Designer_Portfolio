@@ -40,6 +40,39 @@
     .hero-glass-container {
       position: relative;
     }
+
+    /* Services Styles */
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary) !important;
+      box-shadow: 0 10px 30px rgba(6, 182, 212, 0.1);
+    }
+
+    /* Portfolio Styles */
+    @keyframes pulse-signal {
+      0% { opacity: 0.4; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 0.4; transform: scale(0.9); }
+    }
+
+    .signal-dot {
+      animation: pulse-signal 2s infinite;
+    }
+
+    .reel-container:hover .play-btn {
+      transform: scale(1.1);
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    /* Experience & home2 styles */
+    .sonic-identity-img-wrapper img {
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .sonic-identity-img-wrapper:hover img {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 
@@ -70,13 +103,13 @@
 
       <!-- Navigation Links -->
       <nav class="nav-links">
-        <a href="index.html" class="nav-link active">Home1</a>
-        <a href="home2.html" class="nav-link">Home2</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="work.html" class="nav-link">Work</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#contact" class="nav-link">Contact</a>
 
         <!-- Actions -->
         <div class="nav-actions">
@@ -107,7 +140,7 @@
             </button>
           </div>
 
-          <a href="contact.html" class="btn btn-primary">Reach Us</a>
+          <a href="#contact" class="btn btn-primary">Reach Us</a>
         </div>
       </nav>
 
@@ -116,7 +149,7 @@
 
   <main>
     <!-- Hero Section (Restored Classic) -->
-    <section id="h-hero-v2" class="section"
+    <section id="home" class="section"
       style="padding-top: calc(var(--nav-height) + 4rem); min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; background: linear-gradient(rgba(11, 15, 25, 0.4), rgba(11, 15, 25, 0.6)), url('images/home1_hero_premium.png') center/cover; background-attachment: fixed;">
       <div class="h-hero-scanline"></div>
       <div class="container" style="position: relative; z-index: 10;">
@@ -139,10 +172,10 @@
             cinematic visuals.
           </p>
           <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
-            <a href="work.html" class="btn btn-primary"
+            <a href="#portfolio" class="btn btn-primary"
               style="padding: 1.25rem 3rem; font-weight: 800; font-size: 1.1rem; box-shadow: 0 0 30px rgba(6, 182, 212, 0.4); text-transform: uppercase; letter-spacing: 0.1em;">Explore
               Projects</a>
-            <a href="services.html" class="btn btn-secondary"
+            <a href="#services" class="btn btn-secondary"
               style="border: 1.5px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.08); color: #fff; padding: 1.25rem 3rem; font-weight: 700; font-size: 1.1rem; text-transform: uppercase;">Our
               Solutions</a>
           </div>
@@ -150,44 +183,112 @@
       </div>
     </section>
 
-    <!-- Services Overview (Classic) -->
+    <!-- SECTION 2: About Section (Consolidated) -->
+    <section id="about" class="section"
+      style="min-height: 50vh; display: flex; align-items: center; justify-content: center; position: relative; background: var(--hero-bg); overflow: hidden;">
+      <div class="container fade-in-up" style="position: relative; z-index: 10; text-align: center;">
+        <p
+          style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 1rem;">
+          The Master Signal</p>
+        <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.2; margin-bottom: 2rem;">Sonic <span
+            style="display: inline-block; color: var(--primary); font-weight: 900; letter-spacing: -0.01em; filter: drop-shadow(0 0 5px rgba(6, 182, 212, 0.3));">Vision</span>
+        </h2>
+        <p style="max-width: 700px; margin: 0 auto; font-size: 1.125rem; opacity: 0.8; line-height: 1.6;">We don't just
+          record waveforms; we architect emotional responses. Behind every pixel is a story that only frequency can
+          tell.
+        </p>
+      </div>
+      <div
+        style="position: absolute; right: -10%; top: 20%; width: 50%; height: 60%; background: linear-gradient(135deg, var(--primary) 0%, transparent 70%); opacity: 0.05; filter: blur(100px); pointer-events: none;">
+      </div>
+    </section>
+
+    <!-- SECTION 2.1: The Studio Persona -->
     <section class="section">
-      <div class="container">
-        <h2 style="text-align: center; margin-bottom: 5rem; text-transform: uppercase; letter-spacing: -0.02em;">
-          Technical Expertise</h2>
-        <div class="grid-3" style="gap: 3rem;">
-          <div class="glass-bg"
-            style="padding: 0; border-radius: var(--radius-lg); border: 1px solid var(--border-color); position: relative; overflow: hidden; text-align: center;">
+      <div class="container fade-in-up">
+        <div class="grid-2 about-persona-grid" style="gap: 6rem; align-items: center;">
+          <div class="persona-image-wrapper" style="position: relative;">
             <div
-              style="height: 200px; background: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200') center/cover;">
+              style="aspect-ratio: 4/5; width: 100%; background: url('images/studio_persona_moody_1775890774664.png') center/cover; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: 0 30px 60px rgba(0,0,0,0.4);">
             </div>
-            <div style="padding: 3rem;">
-              <h3 style="margin-bottom: 1.5rem; text-transform: uppercase;">Sound Design</h3>
-              <p style="opacity: 0.7; font-size: 0.9375rem; line-height: 1.7;">Hyper-realistic synthesis and granular
-                manipulation for maximum narrative weight.</p>
-            </div>
+            <div class="persona-badge"
+              style="position: absolute; bottom: 2rem; right: -2rem; background: var(--primary); color: #000; padding: 1rem 2rem; border-radius: var(--radius-sm); font-weight: 900; transform: rotate(-3deg); box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);">
+              EST. 2012</div>
           </div>
-          <div class="glass-bg"
-            style="padding: 0; border-radius: var(--radius-lg); border: 1px solid var(--border-color); position: relative; overflow: hidden; text-align: center;">
-            <div
-              style="height: 200px; background: url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200') center/cover;">
-            </div>
-            <div style="padding: 3rem;">
-              <h3 style="margin-bottom: 1.5rem; text-transform: uppercase;">Foley Arts</h3>
-              <p style="opacity: 0.7; font-size: 0.9375rem; line-height: 1.7;">Organic, textural captures recorded
-                in-house to breathe physical life into visuals.</p>
-            </div>
+          <div>
+            <h2 style="text-transform: uppercase; margin-bottom: 2rem;">The Studio Persona</h2>
+            <p style="font-size: 1.125rem; line-height: 1.8; opacity: 0.8; margin-bottom: 2rem;">Driven by the
+              relentless pursuit of sonic perfection, Aura Sound was founded on the belief that audio is the soul of
+              visual media. For over a decade, we have been crafting the "invisible" layer that connects an audience to
+              the narrative.</p>
+            <p style="font-size: 1.125rem; line-height: 1.8; opacity: 0.8;">From capturing the subtle friction of a
+              desert wind to processing heavy industrial transients, our process is purely organic and narratively
+              driven.</p>
           </div>
-          <div class="glass-bg"
-            style="padding: 0; border-radius: var(--radius-lg); border: 1px solid var(--border-color); position: relative; overflow: hidden; text-align: center;">
+        </div>
+      </div>
+    </section>
+    <!-- SECTION 3: Services (Capability Matrix) -->
+    <section id="services" class="section" style="background-color: var(--surface-1);">
+      <div class="container fade-in-up">
+        <h2 style="text-align: center; margin-bottom: 5rem; text-transform: uppercase; letter-spacing: -0.02em;">Studio
+          Capabilities</h2>
+        <div class="grid-3" style="gap: 2.5rem; align-items: stretch;">
+          <div class="service-card"
+            style="background-color: var(--bg-color); padding: 3rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); transition: transform var(--trans-base); text-align: center; display: flex; flex-direction: column; height: 100%;">
             <div
-              style="height: 200px; background: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200') center/cover;">
+              style="width: 64px; height: 64px; background-color: rgba(6, 182, 212, 0.1); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
             </div>
-            <div style="padding: 3rem;">
-              <h3 style="margin-bottom: 1.5rem; text-transform: uppercase;">Atmos Mixing</h3>
-              <p style="opacity: 0.7; font-size: 0.9375rem; line-height: 1.7;">Elite Dolby Atmos 7.1.4 delivery and
-                immersive spatial balancing for visual platforms.</p>
+            <h3 style="text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">Sound Design</h3>
+            <p style="font-size: 0.9375rem; opacity: 0.8; line-height: 1.7; flex: 1;">Custom architectural soundscapes,
+              signature SFX, and immersive atmospheres built from proprietary field recordings.</p>
+            <a href="#portfolio" class="btn btn-secondary"
+              style="width: 100%; margin-top: 2rem; font-size: 0.8rem; text-transform: uppercase;">View
+              Portfolio</a>
+          </div>
+
+          <div class="service-card"
+            style="background-color: var(--bg-color); padding: 3rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); transition: transform var(--trans-base); text-align: center; display: flex; flex-direction: column; height: 100%;">
+            <div
+              style="width: 64px; height: 64px; background-color: rgba(6, 182, 212, 0.1); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
             </div>
+            <h3 style="text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">Foley Artistry</h3>
+            <p style="font-size: 0.9375rem; opacity: 0.8; line-height: 1.7; flex: 1;">Hyper-realistic physical
+              performance and capture that anchors visual elements in an authentic tactile reality.</p>
+            <a href="#portfolio" class="btn btn-secondary"
+              style="width: 100%; margin-top: 2rem; font-size: 0.8rem; text-transform: uppercase;">Discover
+              Foley</a>
+          </div>
+
+          <div class="service-card"
+            style="background-color: var(--bg-color); padding: 3rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); transition: transform var(--trans-base); text-align: center; display: flex; flex-direction: column; height: 100%;">
+            <div
+              style="width: 64px; height: 64px; background-color: rgba(6, 182, 212, 0.1); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+              </svg>
+            </div>
+            <h3 style="text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">Spatial Mixing</h3>
+            <p style="font-size: 0.9375rem; opacity: 0.8; line-height: 1.7; flex: 1;">Professional re-recording and
+              spatial integration for 5.1, 7.1, and Dolby Atmos cinematic delivery.</p>
+            <a href="#experience" class="btn btn-secondary"
+              style="width: 100%; margin-top: 2rem; font-size: 0.8rem; text-transform: uppercase;">Explore
+              Atmos</a>
           </div>
         </div>
       </div>
@@ -226,84 +327,173 @@
       </div>
     </section>
 
-    <!-- Section 4: Portfolio Subset (Classic) -->
-    <section class="section">
-      <div class="container">
-        <div class="portfolio-header"
-          style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5rem;">
-          <h2 style="font-size: 2.5rem; text-transform: uppercase;">Case <span
-              style="color: var(--primary);">Signals</span></h2>
-          <a href="work.html" class="nav-link" style="color: var(--primary); font-weight: 700;">Full Archive →</a>
-        </div>
-        <div class="grid-2" style="gap: 2.5rem;">
-          <div
-            style="border-radius: var(--radius-lg); overflow: hidden; position: relative; border: 1px solid var(--border-color);">
-            <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200" alt="Work"
-              style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-            <div class="case-card-body" style="padding: 2.5rem; background: var(--surface-1);">
-              <h4 style="margin-bottom: 0.5rem; text-transform: uppercase;">The Harmonic Void</h4>
-              <p style="opacity: 0.6; font-size: 0.875rem;">Cinematic Soundscape</p>
-            </div>
-          </div>
-          <div
-            style="border-radius: var(--radius-lg); overflow: hidden; position: relative; border: 1px solid var(--border-color);">
-            <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?q=80&w=1200" alt="Work"
-              style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-            <div class="case-card-body" style="padding: 2.5rem; background: var(--surface-1);">
-              <h4 style="margin-bottom: 0.5rem; text-transform: uppercase;">Kinetic Energy</h4>
-              <p style="opacity: 0.6; font-size: 0.875rem;">Game Audio Integration</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 5: The Technical Arsenal (NEW) -->
-    <section class="section" style="background-color: var(--bg-color); border-top: 1px solid var(--border-color);">
+    <!-- SECTION 4: Portfolio (Showreel & Project Log) -->
+    <section id="portfolio" class="section">
       <div class="container fade-in-up">
-        <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
-          <h2 style="text-transform: uppercase; letter-spacing: -0.02em; margin-bottom: 1.5rem;">Technical Arsenal</h2>
-          <p style="opacity: 0.8;">The precision instruments and industry standards defining every AURA signal.</p>
+        <div class="reel-container"
+          style="aspect-ratio: 21/9; background: url('images/reel-bg.png') center/cover; border-radius: var(--radius-lg); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.6);">
+          <div
+            style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,15,25,0.95), rgba(11,15,25,0.2)); z-index: 1;">
+          </div>
+          <div
+            style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; z-index: 2; opacity: 0.3; background-image: repeating-linear-gradient(90deg, var(--primary) 0, var(--primary) 2px, transparent 2px, transparent 8px); mask-image: linear-gradient(to top, black, transparent);">
+          </div>
+          <div class="reel-content" style="position: relative; z-index: 10; text-align: center; padding: 2rem;">
+            <div
+              style="margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 0.75rem; background: rgba(6, 182, 212, 0.1); border: 1px solid var(--primary); padding: 0.5rem 1.25rem; border-radius: var(--radius-full); backdrop-filter: blur(8px);">
+              <div class="signal-dot"
+                style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary);">
+              </div>
+              <span
+                style="font-size: 0.75rem; text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em; color: var(--primary);">Signal
+                Status: Received</span>
+            </div>
+            <h2
+              style="font-size: clamp(1.8rem, 5vw, 3.5rem); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: -0.02em;">
+              2026 Sound Design Reel</h2>
+            <p style="font-size: 1.125rem; opacity: 0.8; margin-bottom: 3rem;">2m 45s • Mixed and Engineered in Dolby
+              Atmos 7.1.4</p>
+            <button class="play-btn" style="width: 100px; height: 100px; font-size: 1.5rem; margin: 0 auto;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor"
+                stroke="none">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </button>
+          </div>
         </div>
-        <div class="grid-3" style="gap: 2rem;">
-          <div
-            style="padding: 0; background: var(--surface-1); border: 1px solid var(--border-color); border-radius: var(--radius-lg); text-align: center; overflow: hidden;">
+      </div>
+    </section>
+
+    <section class="section" style="background-color: var(--surface-1);">
+      <div class="container">
+        <div class="project-log-header"
+          style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem;">
+          <div>
+            <h2 style="text-transform: uppercase; letter-spacing: -0.02em;">Project Log</h2>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">Selected works across Film, Games, and Commercials.</p>
+          </div>
+        </div>
+        <div class="grid-3" style="gap: 2.5rem;">
+          <!-- Project 1 -->
+          <div class="fade-in-up project-card">
             <div
-              style="height: 180px; background: url('https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?q=80&w=1200') center/cover;">
+              style="aspect-ratio: 16/10; background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200') center/cover; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 1.5rem; position: relative; overflow: hidden; transition: var(--trans-base); cursor: pointer;">
+              <div
+                style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), transparent);">
+              </div>
+              <div
+                style="position: absolute; top: 1.5rem; left: 1.5rem; background: var(--surface-2); padding: 0.4rem 0.8rem; border-radius: var(--radius-sm); font-size: 0.7rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; border: 1px solid var(--border-color);">
+                Cinematic</div>
             </div>
-            <div style="padding: 2.5rem;">
-              <h4 style="text-transform: uppercase; margin-bottom: 1rem;">DAW Standards</h4>
-              <p style="font-size: 0.875rem; opacity: 0.7;">Pro Tools | Ultimate & Logic Pro environment for lossless
-                signal integrity.</p>
+            <h4 style="margin-bottom: 0.5rem;">Project Nexus - Sci-Fi Thriller</h4>
+            <p style="font-size: 0.875rem; opacity: 0.7;">Full sound architecture & surround mixing.</p>
+          </div>
+          <!-- Project 2 -->
+          <div class="fade-in-up project-card" style="animation-delay: 0.1s;">
+            <div
+              style="aspect-ratio: 16/10; background: url('https://images.unsplash.com/photo-1606813907291-d86efa9b94db?q=80&w=1200') center/cover; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 1.5rem; position: relative; overflow: hidden; transition: var(--trans-base); cursor: pointer;">
+              <div
+                style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), transparent);">
+              </div>
+              <div
+                style="position: absolute; top: 1.5rem; left: 1.5rem; background: var(--surface-2); padding: 0.4rem 0.8rem; border-radius: var(--radius-sm); font-size: 0.7rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; border: 1px solid var(--border-color);">
+                Game Audio</div>
+            </div>
+            <h4 style="margin-bottom: 0.5rem;">Eternity's Edge - Combat Audio</h4>
+            <p style="font-size: 0.875rem; opacity: 0.7;">Dynamic SFX & procedural Foley integration.</p>
+          </div>
+          <!-- Project 3 -->
+          <div class="fade-in-up project-card" style="animation-delay: 0.2s;">
+            <div
+              style="aspect-ratio: 16/10; background: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200') center/cover; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 1.5rem; position: relative; overflow: hidden; transition: var(--trans-base); cursor: pointer;">
+              <div
+                style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), transparent);">
+              </div>
+              <div
+                style="position: absolute; top: 1.5rem; left: 1.5rem; background: var(--surface-2); padding: 0.4rem 0.8rem; border-radius: var(--radius-sm); font-size: 0.7rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; border: 1px solid var(--border-color);">
+                Atmos Mix</div>
+            </div>
+            <h4 style="margin-bottom: 0.5rem;">Midnight Run - Original Score</h4>
+            <p style="font-size: 0.875rem; opacity: 0.7;">7.1.4 Spatial re-master for streaming.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Experience (The Engineering Stage) -->
+    <section id="experience" class="section"
+      style="background: linear-gradient(rgba(11, 15, 25, 0.9), rgba(11, 15, 25, 0.9)), url('images/studio_environment_cinematic_1775890805738.png') center/cover; background-attachment: fixed;">
+      <div class="container fade-in-up">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+          <h2 style="font-size: 3.5rem; margin-bottom: 2rem; color: #fff;">World-Class <span
+              style="color: var(--primary);">Atmos
+              Stage</span></h2>
+          <p style="font-size: 1.25rem; line-height: 1.7; opacity: 0.8; margin-bottom: 4rem; color: #fff;">Our studio is
+            more than
+            just equipment; it is a precision instrument calibrated to the stringent standards of top-tier cinematic
+            delivery.</p>
+          <div
+            style="display: inline-block; padding: 2rem 4rem; border: 1px solid var(--primary); border-radius: var(--radius-lg); background: rgba(6, 182, 212, 0.05);">
+            <div style="font-size: 4rem; font-weight: 950; color: var(--primary); line-height: 1;">7.1.4</div>
+            <div
+              style="text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.75rem; margin-top: 1rem; color: #fff;">
+              Stage
+              Calibration</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5.1: Sonic Identity -->
+    <section class="section"
+      style="background-color: var(--bg-color); border-top: 1px solid var(--border-color); position: relative; overflow: hidden;">
+      <div class="container fade-in-up">
+        <div class="grid-2" style="align-items: center; gap: 6rem;">
+          <div>
+            <h2 style="font-size: 3rem; text-transform: uppercase; font-weight: 800; margin-bottom: 2rem;">Sonic <span
+                style="color: var(--primary);">Identity</span></h2>
+            <p style="font-size: 1.125rem; opacity: 0.8; line-height: 1.8; margin-bottom: 3rem;">Every visual frame has
+              a unique resonant frequency. We identify and amplify that essence to create a cohesive narrative
+              experience.</p>
+            <div
+              style="padding: 2.5rem; background: var(--surface-1); border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+              <div class="flex-between" style="margin-bottom: 1.5rem;">
+                <span
+                  style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.2em; font-weight: 800; color: var(--primary);">Current
+                  Signal</span>
+                <span style="font-size: 0.75rem; opacity: 0.5;">02:45 / 04:12</span>
+              </div>
+              <div
+                style="height: 40px; background-image: repeating-linear-gradient(90deg, var(--primary) 0, var(--primary) 2px, transparent 2px, transparent 8px); opacity: 0.8; border-radius: 4px; margin-bottom: 2rem;">
+              </div>
+              <button class="btn btn-primary"
+                style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
+                  stroke="none" class="icon">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                Listen to Master Signal
+              </button>
             </div>
           </div>
-          <div
-            style="padding: 0; background: var(--surface-1); border: 1px solid var(--border-color); border-radius: var(--radius-lg); text-align: center; overflow: hidden;">
+          <div class="sonic-identity-img-wrapper"
+            style="position: relative; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color);">
+            <img src="images/studio_gear_analog_1775890790411.png" alt="Analog Gear"
+              style="width: 100%; aspect-ratio: 1/1; object-fit: cover; opacity: 0.7;">
             <div
-              style="height: 180px; background: url('images/studio_environment_cinematic_1775890805738.png') center/cover;">
-            </div>
-            <div style="padding: 2.5rem;">
-              <h4 style="text-transform: uppercase; margin-bottom: 1rem;">Object Mix</h4>
-              <p style="font-size: 0.875rem; opacity: 0.7;">Dolby Atmos 7.1.4 calibrated mixing environment for 3D
-                spatial delivery.</p>
-            </div>
-          </div>
-          <div
-            style="padding: 0; background: var(--surface-1); border: 1px solid var(--border-color); border-radius: var(--radius-lg); text-align: center; overflow: hidden;">
-            <div style="height: 180px; background: url('images/studio_gear_analog_1775890790411.png') center/cover;">
-            </div>
-            <div style="padding: 2.5rem;">
-              <h4 style="text-transform: uppercase; margin-bottom: 1rem;">Field Capture</h4>
-              <p style="font-size: 0.875rem; opacity: 0.7;">High-resolution 192kHz/24-bit organic texture recording for
-                unique sonic signatures.</p>
+              style="position: absolute; bottom: 3rem; left: 3rem; right: 3rem; padding: 2rem; background: rgba(11, 15, 25, 0.9); backdrop-filter: blur(10px); border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.1);">
+              <h5 style="text-transform: uppercase; color: #fff; margin-bottom: 0.5rem; letter-spacing: 0.1em;">Analog
+                Warmth</h5>
+              <p style="font-size: 0.875rem; color: #fff; opacity: 0.6;">Vacuum tube saturation for organic presence.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials (Classic Glass) -->
-    <section class="section" style="background-color: var(--surface-1);">
+    <!-- SECTION 6: Testimonials (Classic Glass) -->
+    <section id="testimonials" class="section" style="background-color: var(--surface-1);">
       <div class="container">
         <div class="grid-2" style="gap: 3rem;">
           <div class="glass-bg testimonial-card"
@@ -341,24 +531,105 @@
       </div>
     </section>
 
-    <!-- Call To Action (Classic Blueprint) -->
-    <section id="h-cta-v2" class="section"
-      style="border-top: 1px solid var(--border-color); position: relative; overflow: hidden; background-color: #0b0f19;">
-      <div class="blueprint-grid" style="position: absolute; top:0; left: 0; width: 100%; height: 100%; opacity: 0.05; background-image: 
-        linear-gradient(rgba(6,182,212,0.2) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(6,182,212,0.2) 1px, transparent 1px);
-        background-size: 50px 50px;"></div>
-      <div class="container" style="position: relative; z-index: 10; text-align: center;">
-        <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); text-transform: uppercase; margin-bottom: 1.5rem; color: #fff;">
-          Ready to Amplify Your Project?</h2>
-        <p style="font-size: 1.25rem; opacity: 0.8; max-width: 600px; margin: 0 auto 4rem; color: #fff;">Bespoke audio
-          architecture designed for high-fidelity storytelling.</p>
-        <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
-          <a href="contact.html" class="btn btn-primary" style="padding: 1.25rem 3.5rem; font-weight: 800;">Initialize
-            Project</a>
-          <a href="services.html" class="btn btn-secondary"
-            style="border: 2px solid rgba(255,255,255,0.6); background: rgba(255, 255, 255, 0.1); color: #fff; padding: 1.25rem 3.5rem; font-weight: 700; backdrop-filter: blur(5px);">Explore
-            Solutions</a>
+    <!-- SECTION 7: Contact (Inquiry Portal) -->
+    <section id="contact" class="section" style="background-color: var(--bg-color);">
+      <div class="container fade-in-up">
+        <div class="grid-2 contact-section-grid" style="gap: 5rem; align-items: start;">
+          <div>
+            <h2 style="margin-bottom: 2rem; text-transform: uppercase; letter-spacing: -0.02em;">The Studio Desk</h2>
+            <p style="margin-bottom: 3rem; line-height: 1.7;">We are currently accepting new projects for Q3/Q4 2026.
+              Reach out for a custom quote or to discuss your creative vision and narrative requirements.</p>
+
+            <div style="display: flex; gap: 1.5rem; align-items: center; margin-bottom: 2rem;">
+              <div
+                style="width: 56px; height: 56px; background: var(--surface-1); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <p
+                  style="font-size: 0.75rem; text-transform: uppercase; color: var(--primary); font-weight: 700; letter-spacing: 0.1em;">
+                  Studio Location</p>
+                <p style="font-weight: 600; font-size: 1.125rem;">123 Audio Engineering Blvd.<br>Manhattan, NY 10001</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1.5rem; align-items: center; margin-bottom: 2rem;">
+              <div
+                style="width: 56px; height: 56px; background: var(--surface-1); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <p
+                  style="font-size: 0.75rem; text-transform: uppercase; color: var(--primary); font-weight: 700; letter-spacing: 0.1em;">
+                  Direct Link</p>
+                <p style="font-weight: 600; font-size: 1.125rem;">+1 (555) 123-4567</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+              <div
+                style="width: 56px; height: 56px; background: var(--surface-1); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <p
+                  style="font-size: 0.75rem; text-transform: uppercase; color: var(--primary); font-weight: 700; letter-spacing: 0.1em;">
+                  Broadcast Address</p>
+                <p style="font-weight: 600; font-size: 1.125rem;">studio@aurasound.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-container"
+            style="background-color: var(--surface-1); padding: 3rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: 0 30px 60px rgba(0,0,0,0.5); position: relative; z-index: 10;">
+            <form onsubmit="event.preventDefault(); alert('Transmission Sent.');">
+              <div class="form-row"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;">Operator
+                    Name</label>
+                  <input type="text" class="input" placeholder="Full Name" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;">Signal
+                    Address</label>
+                  <input type="email" class="input" placeholder="Email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;">Frequency
+                  (Category)</label>
+                <select class="input" style="appearance: none; cursor: pointer;">
+                  <option>Film Scoring</option>
+                  <option>Game Sound Design</option>
+                  <option>Commercial Post</option>
+                  <option>Dolby Atmos Mixing</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;">Transmission
+                  Content</label>
+                <textarea class="input" rows="5" placeholder="Project details, timeline, and audio specs..." required
+                  style="resize: vertical;"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary"
+                style="width: 100%; padding: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;">Transmit
+                Signal</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -409,24 +680,25 @@
         <div class="footer-col">
           <h4>Navigation</h4>
           <div class="footer-links">
-            <a href="index.html" class="footer-link">Home</a>
-            <a href="about.html" class="footer-link">About</a>
-            <a href="work.html" class="footer-link">Portfolio</a>
-            <a href="services.html" class="footer-link">Services</a>
+            <a href="#home" class="footer-link">Home</a>
+            <a href="#about" class="footer-link">About</a>
+            <a href="#portfolio" class="footer-link">Portfolio</a>
+            <a href="#services" class="footer-link">Services</a>
+            <a href="#experience" class="footer-link">Experience</a>
           </div>
         </div>
         <div class="footer-col">
           <h4>Expertise</h4>
           <div class="footer-links">
-            <a href="services.html#sound-design" class="footer-link">Sound Design</a>
-            <a href="services.html#foley" class="footer-link">Foley Art</a>
-            <a href="services.html#atmos" class="footer-link">Atmos Mixing</a>
+            <a href="#services" class="footer-link">Sound Design</a>
+            <a href="#services" class="footer-link">Foley Art</a>
+            <a href="#experience" class="footer-link">Atmos Mixing</a>
           </div>
         </div>
         <div class="footer-col">
           <h4>Connect</h4>
           <div class="footer-links">
-            <a href="contact.html" class="footer-link">Contact Us</a>
+            <a href="#contact" class="footer-link">Contact Us</a>
             <a href="#" class="footer-link">Instagram</a>
             <a href="#" class="footer-link">LinkedIn</a>
           </div>

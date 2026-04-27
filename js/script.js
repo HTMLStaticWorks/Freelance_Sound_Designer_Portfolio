@@ -32,13 +32,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Mobile Menu Toggle ---
   const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  const navLinksContainer = document.querySelector('.nav-links');
+  const navLinksItems = document.querySelectorAll('.nav-link');
   
-  if (menuToggle && navLinks) {
+  if (menuToggle && navLinksContainer) {
     menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+      navLinksContainer.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    navLinksItems.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinksContainer.classList.remove('active');
+      });
     });
   }
+
+  // --- Scroll-Spy & Smooth Scroll ---
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const navHeight = 80;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop - navHeight - 50) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').includes(current)) {
+        link.classList.add('active');
+      }
+    });
+  });
 
   // --- Password Visibility Toggle ---
   const pwdToggles = document.querySelectorAll('.pwd-toggle');
