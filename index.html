@@ -50,9 +50,20 @@
 
     /* Portfolio Styles */
     @keyframes pulse-signal {
-      0% { opacity: 0.4; transform: scale(0.9); }
-      50% { opacity: 1; transform: scale(1.1); }
-      100% { opacity: 0.4; transform: scale(0.9); }
+      0% {
+        opacity: 0.4;
+        transform: scale(0.9);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+
+      100% {
+        opacity: 0.4;
+        transform: scale(0.9);
+      }
     }
 
     .signal-dot {
@@ -88,7 +99,7 @@
           stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
           <path d="M2 12h4l3-9 5 18 3-9h5"></path>
         </svg>
-        AURA<span>SOUND</span>
+        <div class="logo-text">ALEX<span>RIVERS</span></div>
       </a>
 
       <!-- Menu Toggle -->
@@ -157,20 +168,28 @@
           style="background: rgba(11, 15, 25, 0.3); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); padding: 5rem 3rem; border-radius: var(--radius-lg); border: 1px solid rgba(255, 255, 255, 0.12); max-width: 950px; margin: 3rem auto 2rem; box-shadow: 0 50px 100px rgba(0,0,0,0.6); border-bottom: 2px solid rgba(6, 182, 212, 0.3); text-align: center;">
           <div class="hero-header-v2">
             <span class="hero-eyebrow"
-              style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4em; margin-bottom: 2rem; display: block; font-size: 0.9rem;">Freelance
-              Sound Designer & Atmos Engineer</span>
+              style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4em; margin-bottom: 2rem; display: block; font-size: 0.9rem;">Sound Design Specialist</span>
             <h1
-              style="font-size: clamp(3.2rem, 8vw, 6rem); text-transform: uppercase; font-weight: 950; line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 2.5rem; color: #fff; text-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-              I Architect <span
-                style="color: var(--primary); filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4));">Sonic</span>
-              Worlds
+              style="font-size: clamp(3.2rem, 8vw, 6rem); text-transform: uppercase; font-weight: 950; line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 2rem; color: #fff; text-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+              Hi, I’m <span style="color: var(--primary);">Alex Rivers</span><br>
+              <span style="font-size: 0.5em; opacity: 0.8; letter-spacing: 0.05em;">Freelance Sound Designer</span>
             </h1>
           </div>
           <p
-            style="font-size: 1.35rem; max-width: 750px; margin: 0 auto 4rem; opacity: 0.9; line-height: 1.7; color: #f3f4f6; font-weight: 300;">
-            Where surgical precision meets creative narrative. I engineer high-fidelity audio that breathes life into
-            visual stories across film, games, and digital media.
+            style="font-size: 1.35rem; max-width: 750px; margin: 0 auto 3rem; opacity: 0.9; line-height: 1.7; color: #f3f4f6; font-weight: 300;">
+            I specialize in cinematic sound design for films and games, creating immersive audio experiences that enhance storytelling.
           </p>
+          
+          <div class="hero-highlights">
+            <div class="highlight-item">
+              <span style="display: block; font-size: 2.5rem; font-weight: 900; color: var(--primary); line-height: 1;">20+</span>
+              <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-muted); margin-top: 0.5rem; display: block;">Projects Completed</span>
+            </div>
+            <div class="highlight-item">
+              <span style="display: block; font-size: 2.5rem; font-weight: 900; color: var(--primary); line-height: 1;">12+</span>
+              <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-muted); margin-top: 0.5rem; display: block;">Years of Mastery</span>
+            </div>
+          </div>
           <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
             <a href="#portfolio" class="btn btn-primary"
               style="padding: 1.25rem 3rem; font-weight: 800; font-size: 1.1rem; box-shadow: 0 0 30px rgba(6, 182, 212, 0.4); text-transform: uppercase; letter-spacing: 0.1em;">My
@@ -240,14 +259,18 @@
               style="width: 64px; height: 64px; background-color: rgba(6, 182, 212, 0.1); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
-                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                <line x1="7" y1="2" x2="7" y2="22"></line>
+                <line x1="17" y1="2" x2="17" y2="22"></line>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <line x1="2" y1="7" x2="7" y2="7"></line>
+                <line x1="2" y1="17" x2="7" y2="17"></line>
+                <line x1="17" y1="17" x2="22" y2="17"></line>
+                <line x1="17" y1="7" x2="22" y2="7"></line>
               </svg>
             </div>
-            <h3 style="text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">Custom Sound Design</h3>
-            <p style="font-size: 0.9375rem; opacity: 0.8; line-height: 1.7; flex: 1;">I create bespoke architectural
-              soundscapes and signature SFX built from proprietary field recordings, tailored to your project’s unique DNA.</p>
+            <h3 style="text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">Film Sound Design</h3>
+            <p style="font-size: 0.9375rem; opacity: 0.8; line-height: 1.7; flex: 1;">I create immersive audio that enhances storytelling and emotional impact for cinematic projects.</p>
             <a href="#portfolio" class="btn btn-secondary"
               style="width: 100%; margin-top: 2rem; font-size: 0.8rem; text-transform: uppercase;">View
               Work</a>
@@ -259,17 +282,18 @@
               style="width: 64px; height: 64px; background-color: rgba(6, 182, 212, 0.1); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="17 8 12 3 7 8"></polyline>
-                <line x1="12" y1="3" x2="12" y2="15"></line>
+                <line x1="6" y1="12" x2="10" y2="12"></line>
+                <line x1="8" y1="10" x2="8" y2="14"></line>
+                <circle cx="15" cy="13" r="1"></circle>
+                <circle cx="18" cy="11" r="1"></circle>
+                <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152L2 17a1 1 0 0 0 1 1h2a5 5 0 0 0 10 0h2a1 1 0 0 0 1-1l-.685-8.258c-.023-.273-.042-.547-.042-.822A4 4 0 0 0 17.32 5z"></path>
               </svg>
             </div>
-            <h3 style="text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">Authentic Foley</h3>
-            <p style="font-size: 0.9375rem; opacity: 0.8; line-height: 1.7; flex: 1;">I perform and capture
-              hyper-realistic physical sounds that ground your visual elements in an authentic, tactile reality.</p>
+            <h3 style="text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">Game Audio Design</h3>
+            <p style="font-size: 0.9375rem; opacity: 0.8; line-height: 1.7; flex: 1;">I design adaptive and interactive sound for engaging gameplay and deeply immersive virtual worlds.</p>
             <a href="#portfolio" class="btn btn-secondary"
               style="width: 100%; margin-top: 2rem; font-size: 0.8rem; text-transform: uppercase;">Discover
-              Foley</a>
+              Audio</a>
           </div>
 
           <div class="service-card"
@@ -278,17 +302,74 @@
               style="width: 64px; height: 64px; background-color: rgba(6, 182, 212, 0.1); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="9" y1="9" x2="15" y2="15"></line>
-                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="4" y1="21" x2="4" y2="14"></line>
+                <line x1="4" y1="10" x2="4" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="3"></line>
+                <line x1="20" y1="21" x2="20" y2="16"></line>
+                <line x1="20" y1="12" x2="20" y2="3"></line>
+                <line x1="2" y1="14" x2="6" y2="14"></line>
+                <line x1="10" y1="8" x2="14" y2="8"></line>
+                <line x1="18" y1="16" x2="22" y2="16"></line>
               </svg>
             </div>
-            <h3 style="text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">Spatial Mixing</h3>
-            <p style="font-size: 0.9375rem; opacity: 0.8; line-height: 1.7; flex: 1;">I provide professional spatial
-              integration for 5.1, 7.1, and Dolby Atmos, ensuring your mix translates perfectly across every platform.</p>
+            <h3 style="text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">Mixing & Mastering</h3>
+            <p style="font-size: 0.9375rem; opacity: 0.8; line-height: 1.7; flex: 1;">I deliver clean, balanced, and cinematic-quality audio that translates perfectly across all playback systems.</p>
             <a href="#experience" class="btn btn-secondary"
               style="width: 100%; margin-top: 2rem; font-size: 0.8rem; text-transform: uppercase;">Explore
               Atmos</a>
+          </div>
+
+          <div class="service-card"
+            style="background-color: var(--bg-color); padding: 3rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); transition: transform var(--trans-base); text-align: center; display: flex; flex-direction: column; height: 100%;">
+            <div
+              style="width: 64px; height: 64px; background-color: rgba(6, 182, 212, 0.1); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="23"></line>
+                <line x1="8" y1="23" x2="16" y2="23"></line>
+              </svg>
+            </div>
+            <h3 style="text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">Custom Foley & SFX</h3>
+            <p style="font-size: 0.9375rem; opacity: 0.8; line-height: 1.7; flex: 1;">I craft unique, organic sounds tailored to each project, giving every frame its own distinct sonic DNA.</p>
+            <a href="#portfolio" class="btn btn-secondary"
+              style="width: 100%; margin-top: 2rem; font-size: 0.8rem; text-transform: uppercase;">View
+              SFX</a>
+          </div>
+
+          <div class="service-card"
+            style="background-color: var(--bg-color); padding: 3rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); transition: transform var(--trans-base); text-align: center; display: flex; flex-direction: column; height: 100%;">
+            <div
+              style="width: 64px; height: 64px; background-color: rgba(6, 182, 212, 0.1); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                <path d="M8 9h8"></path>
+                <path d="M8 13h6"></path>
+              </svg>
+            </div>
+            <h3 style="text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">Post-Production</h3>
+            <p style="font-size: 0.9375rem; opacity: 0.8; line-height: 1.7; flex: 1;">I provide dialogue cleaning and spectral restoration to ensure your narrative is heard with absolute clarity.</p>
+            <a href="#contact" class="btn btn-secondary"
+              style="width: 100%; margin-top: 2rem; font-size: 0.8rem; text-transform: uppercase;">Get Quote</a>
+          </div>
+
+          <div class="service-card"
+            style="background-color: var(--bg-color); padding: 3rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); transition: transform var(--trans-base); text-align: center; display: flex; flex-direction: column; height: 100%;">
+            <div
+              style="width: 64px; height: 64px; background-color: rgba(6, 182, 212, 0.1); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+            </div>
+            <h3 style="text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">Sonic Branding</h3>
+            <p style="font-size: 0.9375rem; opacity: 0.8; line-height: 1.7; flex: 1;">I develop unique audio identities and sonic logos that help your brand resonate across every platform.</p>
+            <a href="#contact" class="btn btn-secondary"
+              style="width: 100%; margin-top: 2rem; font-size: 0.8rem; text-transform: uppercase;">Brand Audio</a>
           </div>
         </div>
       </div>
@@ -351,7 +432,8 @@
             <h2
               style="font-size: clamp(1.8rem, 5vw, 3.5rem); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: -0.02em;">
               My 2026 Sound Design Reel</h2>
-            <p style="font-size: 1.125rem; opacity: 0.8; margin-bottom: 3rem;">2m 45s • Mixed and Engineered by me in Dolby
+            <p style="font-size: 1.125rem; opacity: 0.8; margin-bottom: 3rem;">2m 45s • Mixed and Engineered by me in
+              Dolby
               Atmos 7.1.4</p>
             <button class="play-btn" style="width: 100px; height: 100px; font-size: 1.5rem; margin: 0 auto;">
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor"
@@ -385,8 +467,9 @@
                 style="position: absolute; top: 1.5rem; left: 1.5rem; background: var(--surface-2); padding: 0.4rem 0.8rem; border-radius: var(--radius-sm); font-size: 0.7rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; border: 1px solid var(--border-color);">
                 Cinematic</div>
             </div>
-            <h4 style="margin-bottom: 0.5rem;">Project Nexus - Sci-Fi Thriller</h4>
-            <p style="font-size: 0.875rem; opacity: 0.7;"><strong>Role:</strong> Lead Sound Designer. <strong>Contribution:</strong> Built the entire sonic palette and orchestrated the final Atmos spatial mix.</p>
+            <h4 style="margin-bottom: 0.75rem; font-size: 1.25rem;">Project: Echoes (Short Film)</h4>
+            <p style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--primary); font-weight: 600;">Role: Sound Designer</p>
+            <p style="font-size: 0.875rem; opacity: 0.8; line-height: 1.6;">Designed atmospheric soundscapes and Foley to enhance emotional depth and realism, ensuring the audience feels every subtle shift in the narrative's tension.</p>
           </div>
           <!-- Project 2 -->
           <div class="fade-in-up project-card" style="animation-delay: 0.1s;">
@@ -399,8 +482,9 @@
                 style="position: absolute; top: 1.5rem; left: 1.5rem; background: var(--surface-2); padding: 0.4rem 0.8rem; border-radius: var(--radius-sm); font-size: 0.7rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; border: 1px solid var(--border-color);">
                 Game Audio</div>
             </div>
-            <h4 style="margin-bottom: 0.5rem;">Eternity's Edge - Combat Audio</h4>
-            <p style="font-size: 0.875rem; opacity: 0.7;"><strong>Role:</strong> Foley Artist. <strong>Contribution:</strong> Recorded and edited all tactile sound effects for realistic combat impacts.</p>
+            <h4 style="margin-bottom: 0.75rem; font-size: 1.25rem;">Project: Eternity's Edge (Game)</h4>
+            <p style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--primary); font-weight: 600;">Role: Lead Audio Engineer</p>
+            <p style="font-size: 0.875rem; opacity: 0.8; line-height: 1.6;">Developed a dynamic combat audio system with procedural SFX to provide immediate player feedback and heighten the visceral impact of interactive combat.</p>
           </div>
           <!-- Project 3 -->
           <div class="fade-in-up project-card" style="animation-delay: 0.2s;">
@@ -413,32 +497,43 @@
                 style="position: absolute; top: 1.5rem; left: 1.5rem; background: var(--surface-2); padding: 0.4rem 0.8rem; border-radius: var(--radius-sm); font-size: 0.7rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; border: 1px solid var(--border-color);">
                 Atmos Mix</div>
             </div>
-            <h4 style="margin-bottom: 0.5rem;">Midnight Run - Original Score</h4>
-            <p style="font-size: 0.875rem; opacity: 0.7;"><strong>Role:</strong> Re-Recording Mixer. <strong>Contribution:</strong> Performed 7.1.4 spatial re-mastering for high-fidelity streaming platforms.</p>
+            <h4 style="margin-bottom: 0.75rem; font-size: 1.25rem;">Project: Midnight Run (Feature)</h4>
+            <p style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--primary); font-weight: 600;">Role: Re-Recording Mixer</p>
+            <p style="font-size: 0.875rem; opacity: 0.8; line-height: 1.6;">Mastered the final 7.1.4 Dolby Atmos mix to ensure seamless spatial translation across cinema environments and high-fidelity streaming platforms.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: My Engineering Stage -->
     <section id="experience" class="section"
       style="background: linear-gradient(rgba(11, 15, 25, 0.9), rgba(11, 15, 25, 0.9)), url('images/studio_environment_cinematic_1775890805738.png') center/cover; background-attachment: fixed;">
       <div class="container fade-in-up">
-        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-          <h2 style="font-size: 3.5rem; margin-bottom: 2rem; color: #fff;">My Personal <span
-              style="color: var(--primary);">Atmos
-              Stage</span></h2>
-          <p style="font-size: 1.25rem; line-height: 1.7; opacity: 0.8; margin-bottom: 4rem; color: #fff;">My studio is
-            more than
-            just equipment; it is a precision instrument calibrated to the stringent standards of top-tier cinematic
-            delivery.</p>
-          <div
-            style="display: inline-block; padding: 2rem 4rem; border: 1px solid var(--primary); border-radius: var(--radius-lg); background: rgba(6, 182, 212, 0.05);">
-            <div style="font-size: 4rem; font-weight: 950; color: var(--primary); line-height: 1;">7.1.4</div>
-            <div
-              style="text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.75rem; margin-top: 1rem; color: #fff;">
-              Personal
-              Calibration</div>
+        <div style="text-align: center; max-width: 900px; margin: 0 auto;">
+          <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 4rem; color: #fff; text-transform: uppercase; letter-spacing: -0.02em;">Professional <span style="color: var(--primary);">Mastery</span></h2>
+          
+          <div class="experience-stats-grid">
+            <div class="stat-card">
+              <div style="font-size: 3.5rem; font-weight: 900; color: var(--primary); line-height: 1; margin-bottom: 1rem;">5+</div>
+              <p style="color: #fff; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; font-size: 0.9rem;">Years of Experience</p>
+            </div>
+            <div class="stat-card">
+              <div style="font-size: 3.5rem; font-weight: 900; color: var(--primary); line-height: 1; margin-bottom: 1rem;">20+</div>
+              <p style="color: #fff; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; font-size: 0.9rem;">Creative Projects</p>
+            </div>
+            <div class="stat-card">
+              <div style="font-size: 3.5rem; font-weight: 900; color: var(--primary); line-height: 1; margin-bottom: 1rem;">100%</div>
+              <p style="color: #fff; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; font-size: 0.9rem;">Interactive Audio</p>
+            </div>
+          </div>
+
+          <div class="arsenal-container">
+            <h4 style="color: var(--primary); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 2rem; font-size: 0.9rem; border-bottom: 1px solid rgba(6, 182, 212, 0.3); padding-bottom: 1rem; display: inline-block;">Technical Arsenal</h4>
+            <div class="arsenal-tags">
+              <span class="arsenal-tag">Pro Tools</span>
+              <span class="arsenal-tag">Ableton Live</span>
+              <span class="arsenal-tag">Reaper</span>
+              <span class="arsenal-tag">FMOD</span>
+            </div>
           </div>
         </div>
       </div>
@@ -515,7 +610,8 @@
           <div class="glass-bg testimonial-card"
             style="padding: 4rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); position: relative; transition: all 0.4s ease;">
             <p style="font-size: 1.25rem; font-style: italic; opacity: 0.9; margin-bottom: 2.5rem; line-height: 1.7;">
-              "The cleanest mix I’ve ever received. Every element has its place and the energy he brings to the final master is unmatched."</p>
+              "The cleanest mix I’ve ever received. Every element has its place and the energy he brings to the final
+              master is unmatched."</p>
             <div class="testimonial-user" style="display: flex; align-items: center; gap: 1.5rem;">
               <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400" alt="Sarah Jenkins"
                 style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
@@ -536,9 +632,8 @@
       <div class="container fade-in-up">
         <div class="grid-2 contact-section-grid" style="gap: 5rem; align-items: start;">
           <div>
-            <h2 style="margin-bottom: 2rem; text-transform: uppercase; letter-spacing: -0.02em;">Let's Collaborate</h2>
-            <p style="margin-bottom: 3rem; line-height: 1.7;">I am currently accepting new freelance projects for Q3/Q4 2026.
-              Reach out for a custom quote or to discuss how I can help bring your creative vision to life.</p>
+            <h2 style="margin-bottom: 2rem; text-transform: uppercase; letter-spacing: -0.02em;">Let’s collaborate and bring your project to life through sound.</h2>
+            <p style="margin-bottom: 3rem; line-height: 1.7; font-size: 1.25rem; color: var(--primary); font-weight: 700;">Available for freelance work.</p>
 
             <div style="display: flex; gap: 1.5rem; align-items: center; margin-bottom: 2rem;">
               <div
@@ -646,9 +741,10 @@
               stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
               <path d="M2 12h4l3-9 5 18 3-9h5"></path>
             </svg>
-            AURA<span>SOUND</span>
+            ALEX<span>RIVERS</span>
           </a>
-          <p style="font-size: 0.875rem; line-height: 1.6;">The personal sound design studio of Aura Sound. Dedicated to crafting hyper-realistic and cinematic soundscapes for the next generation of visual media.</p>
+          <p style="font-size: 0.875rem; line-height: 1.6;">The personal sound design studio of Alex Rivers. Dedicated to
+            crafting hyper-realistic and cinematic soundscapes for the next generation of visual media.</p>
           <div class="footer-socials">
             <a href="#" class="social-icon-link" title="Instagram">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -704,7 +800,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 AURA SOUND | Personal Freelance Portfolio. All Rights Reserved.</p>
+        <p>&copy; 2026 ALEX RIVERS | Personal Freelance Portfolio. All Rights Reserved.</p>
       </div>
     </div>
   </footer>

@@ -291,7 +291,9 @@ p {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem; /* Reduced from 2rem to prevent clustering */
+  width: 100%;
+  justify-content: flex-end;
 }
 
 .nav-link {
@@ -1515,3 +1517,139 @@ label {
     margin: 0 auto;
   }
 }
+
+/* =========================================
+   NEW RESPONSIVE REFINEMENTS
+   ========================================= */
+
+/* Hero Highlights */
+.hero-highlights {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.highlight-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem 2.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 220px;
+  flex: 1 1 auto;
+}
+
+@media (max-width: 768px) {
+  .hero-highlights {
+    gap: 1.5rem;
+  }
+  
+  .highlight-item {
+    padding: 1.25rem 1.5rem;
+    min-width: 140px;
+  }
+}
+
+/* Experience Section Stats */
+.experience-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+.stat-card {
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  transition: transform var(--trans-base);
+  text-align: center;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+@media (max-width: 1024px) {
+  .experience-stats-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .stat-card {
+    padding: 2rem;
+  }
+}
+
+/* Technical Arsenal */
+.arsenal-container {
+  padding: 3rem;
+  background: rgba(6, 182, 212, 0.05);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-lg);
+  text-align: left;
+}
+
+.arsenal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.arsenal-tag {
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all var(--trans-fast);
+}
+
+.arsenal-tag:hover {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .arsenal-container {
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  
+  .arsenal-tags {
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .arsenal-container h4 {
+    margin: 0 auto 2rem auto !important;
+  }
+}
+
+/* Service Grid Fix for 6 cards */
+@media (min-width: 769px) and (max-width: 1200px) {
+  #services .grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #services .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+}
