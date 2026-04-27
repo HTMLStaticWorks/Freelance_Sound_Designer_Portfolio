@@ -291,7 +291,8 @@ p {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Reduced from 2rem to prevent clustering */
+  gap: 1.5rem;
+  /* Reduced from 2rem to prevent clustering */
   width: 100%;
   justify-content: flex-end;
 }
@@ -362,7 +363,8 @@ p {
     height: calc(100vh - var(--nav-height));
     background-color: var(--bg-color);
     flex-direction: column;
-    padding: 2rem;
+    justify-content: flex-start;
+    padding: 6rem 2rem;
     transition: left var(--trans-base);
     overflow-y: auto;
   }
@@ -1545,7 +1547,7 @@ label {
   .hero-highlights {
     gap: 1.5rem;
   }
-  
+
   .highlight-item {
     padding: 1.25rem 1.5rem;
     min-width: 140px;
@@ -1586,7 +1588,7 @@ label {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .stat-card {
     padding: 2rem;
   }
@@ -1604,17 +1606,18 @@ label {
 .arsenal-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
+  justify-content: center;
   font-size: 1.25rem;
   font-weight: 600;
   color: #fff;
 }
 
 .arsenal-tag {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   padding: 0.5rem 1.5rem;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all var(--trans-fast);
 }
 
@@ -1629,13 +1632,13 @@ label {
     padding: 2rem 1.5rem;
     text-align: center;
   }
-  
+
   .arsenal-tags {
     justify-content: center;
     gap: 1rem;
     font-size: 1.1rem;
   }
-  
+
   .arsenal-container h4 {
     margin: 0 auto 2rem auto !important;
   }
@@ -1652,4 +1655,4 @@ label {
   #services .grid-3 {
     grid-template-columns: 1fr !important;
   }
-}
+}
