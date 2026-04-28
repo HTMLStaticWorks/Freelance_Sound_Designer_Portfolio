@@ -1656,3 +1656,106 @@ label {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* =========================================
+   HERO SECTION — Tablet (601px – 1024px)
+   ========================================= */
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* Keep section locked to viewport, vertically centered */
+  #home {
+    height: 100dvh !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  /* Slightly compact the glass card for tablet */
+  .hero-glass-container {
+    padding: 2rem 2rem !important;
+    margin: 0 auto !important;
+  }
+
+  /* Moderately reduce heading size */
+  #home h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem) !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #home .hero-glass-container > p {
+    font-size: 1rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .hero-highlights {
+    margin-bottom: 1.25rem !important;
+  }
+
+  #home .btn {
+    padding: 0.85rem 2rem !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* =========================================
+   HERO SECTION — Mobile (≤ 600px)
+   ========================================= */
+@media (max-width: 600px) {
+  /* Allow section to grow taller than viewport on small screens */
+  #home {
+    height: auto !important;
+    min-height: 100dvh !important;
+    padding-top: var(--nav-height) !important;
+    padding-bottom: 2rem !important;
+    align-items: flex-start !important;
+    overflow-y: auto !important;
+  }
+
+  /* Compact the glass card */
+  .hero-glass-container {
+    padding: 1.75rem 1.25rem !important;
+    margin: 1.5rem auto !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  /* Shrink eyebrow label spacing */
+  .hero-eyebrow {
+    margin-bottom: 0.75rem !important;
+    letter-spacing: 0.15em !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* Scale down the main heading */
+  #home h1 {
+    font-size: clamp(1.8rem, 9vw, 2.8rem) !important;
+    margin-bottom: 0.875rem !important;
+    line-height: 1 !important;
+  }
+
+  /* Reduce paragraph size and gap */
+  #home .hero-glass-container > p {
+    font-size: 0.9rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Compact stat numbers */
+  .hero-highlights {
+    gap: 1.5rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .hero-highlights .highlight-item span:first-child {
+    font-size: 1.6rem !important;
+  }
+
+  /* Smaller buttons */
+  #home .btn {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* Tighter button row */
+  #home .hero-glass-container > div:last-child {
+    gap: 0.75rem !important;
+  }
+}
